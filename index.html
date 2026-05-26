@@ -26,6 +26,13 @@
         overflow-x: hidden;
         scroll-behavior: smooth;
         min-height: 100vh;
+        font-size: 13px;
+      }
+
+      /* Selection styling */
+      ::selection {
+        background: rgba(0, 229, 255, 0.2);
+        color: #ffffff;
       }
 
       /* Fullscreen Canvas Background */
@@ -37,20 +44,31 @@
         height: 100vh;
         z-index: 0;
         pointer-events: none;
-        opacity: 0.35;
+        opacity: 0.25;
       }
 
-      /* Main Layout and Container */
+      /* Main Layout and Container matching Clean Minimalism outline */
       .app-wrapper {
         position: relative;
         z-index: 1;
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-        border-left: 1px solid #1a1a1a;
-        border-right: 1px solid #1a1a1a;
-        background-color: rgba(5, 5, 5, 0.9);
+        margin: 40px auto;
+        padding: 40px;
+        border: 4px solid #1a1a1a;
+        background-color: rgba(5, 5, 5, 0.95);
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+      }
+
+      @media (max-width: 1280px) {
+        .app-wrapper {
+          margin: 0 auto;
+          border-left: none;
+          border-right: none;
+          border-top: none;
+          border-bottom: none;
+          padding: 24px;
+        }
       }
 
       /* Minimal Navigation */
@@ -58,13 +76,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 32px 0;
-        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(0, 229, 255, 0.25);
+        margin-bottom: 40px;
       }
 
       .nav-logo {
         font-weight: 700;
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         letter-spacing: -0.05em;
         color: #00e5ff;
         text-transform: uppercase;
@@ -74,46 +93,49 @@
       }
 
       .nav-logo span {
-        color: #9e9e9e;
+        color: #555555;
         font-weight: 300;
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 32px;
+        gap: 24px;
         list-style: none;
       }
 
-      .nav-links a {
-        color: #9e9e9e;
+      .nav-links a:not(.btn-terminal) {
+        color: #888888;
         text-decoration: none;
         font-size: 0.85rem;
-        transition: color 0.3s ease;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
         text-transform: uppercase;
+        letter-spacing: 0.1em;
       }
 
-      .nav-links a:hover {
+      .nav-links a:not(.btn-terminal):hover {
         color: #00e5ff;
+        text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
       }
 
-      /* CV-style terminal button */
+      /* Beautiful terminal style button from Clean Minimalism sample */
       .btn-terminal {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 10px 20px;
+        padding: 10px 18px;
         background-color: transparent;
-        color: #00e5ff;
-        border: 1px solid #00e5ff;
+        color: #b300ff;
+        border: 1px solid #b300ff;
         text-decoration: none;
         font-size: 0.8rem;
-        font-weight: 500;
+        font-weight: 700;
         text-transform: uppercase;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
         overflow: hidden;
+        letter-spacing: 0.08em;
       }
 
       .btn-terminal::before {
@@ -123,7 +145,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.2), transparent);
+        background: linear-gradient(90deg, transparent, rgba(179, 0, 255, 0.2), transparent);
         transition: all 0.5s ease;
       }
 
@@ -132,62 +154,85 @@
       }
 
       .btn-terminal:hover {
-        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-        background-color: rgba(0, 229, 255, 0.05);
-        color: #ffffff;
+        box-shadow: 0 0 15px rgba(179, 0, 255, 0.45);
+        background-color: #b300ff;
+        color: #050505;
       }
 
-      /* Purple accent variation */
-      .btn-terminal.purple-accent {
-        color: #b300ff;
-        border-color: #b300ff;
+      /* Cyan variation */
+      .btn-terminal.cyan-accent {
+        color: #00e5ff;
+        border-color: #00e5ff;
       }
 
-      .btn-terminal.purple-accent:hover {
-        box-shadow: 0 0 15px rgba(179, 0, 255, 0.4);
-        background-color: rgba(179, 0, 255, 0.05);
-        color: #ffffff;
+      .btn-terminal.cyan-accent::before {
+        background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.2), transparent);
+      }
+
+      .btn-terminal.cyan-accent:hover {
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.45);
+        background-color: #00e5ff;
+        color: #050505;
       }
 
       /* Hero Header Section */
       header.hero-section {
-        padding: 100px 0 80px 0;
+        padding: 60px 0 80px 0;
         border-bottom: 1px solid #1a1a1a;
         position: relative;
+        padding-right: 320px; /* Space for absolute stats panel */
       }
 
       .institution-tag {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         color: #b300ff;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        display: block;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .institution-tag::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: #b300ff;
+        animation: pulse 1s infinite alternate;
+      }
+
+      @keyframes pulse {
+        0% { opacity: 0.4; }
+        100% { opacity: 1; }
       }
 
       h1.major-title {
-        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
         font-weight: 700;
         color: #ffffff;
-        line-height: 0.9;
+        line-height: 1.0;
         text-transform: uppercase;
         margin-bottom: 24px;
-        letter-spacing: -2px;
+        letter-spacing: -1.5px;
       }
 
       .subtitle-container {
         display: flex;
         align-items: center;
-        font-size: clamp(0.9rem, 2.5vw, 1.3rem);
-        color: #9e9e9e;
+        font-size: clamp(0.9rem, 2vw, 1.15rem);
+        color: #00e5ff;
         min-height: 2em;
-        font-weight: 300;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
       .cursor {
         display: inline-block;
-        width: 10px;
-        height: 1.2em;
+        width: 8px;
+        height: 1.1em;
         background-color: #00e5ff;
         margin-left: 6px;
         animation: blink 0.8s infinite;
@@ -196,6 +241,23 @@
       @keyframes blink {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
+      }
+
+      /* Right absolute info terminal on Hero */
+      header.hero-section::after {
+        content: "Architecture v3.0 // Stable\nLAT: 9.4173 | LON: 42.0315\nAuth: Institutional Grade";
+        white-space: pre-line;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: right;
+        font-size: 10px;
+        color: rgba(0, 229, 255, 0.5);
+        line-height: 1.8;
+        text-transform: uppercase;
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 0.05em;
       }
 
       /* Main Grid Structure */
@@ -209,6 +271,8 @@
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: 48px;
+        border-bottom: 1px dotted #1a1a1a;
+        padding-bottom: 12px;
       }
 
       .section-title-wrap {
@@ -218,16 +282,17 @@
       }
 
       .section-num {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         color: #00e5ff;
-        opacity: 0.8;
+        font-weight: bold;
       }
 
       .section-title {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
         text-transform: uppercase;
-        color: #ffffff;
-        font-weight: 500;
+        color: #b300ff;
+        font-weight: 700;
+        letter-spacing: 0.2em;
       }
 
       /* Biography / Profile Section Details */
@@ -239,16 +304,16 @@
       }
 
       .profile-image-container {
-        border: 1px solid #1a1a1a;
-        padding: 12px;
-        background-color: rgba(10, 10, 10, 0.8);
+        border: 1px solid rgba(0, 229, 255, 0.2);
+        padding: 16px;
+        background-color: #0a0a0a;
         transition: border-color 0.4s ease, box-shadow 0.4s ease;
         position: relative;
       }
 
       .profile-image-container:hover {
         border-color: #b300ff;
-        box-shadow: 0 0 20px rgba(179, 0, 255, 0.2);
+        box-shadow: 0 0 25px rgba(179, 0, 255, 0.15);
       }
 
       .profile-image-container img {
@@ -257,6 +322,7 @@
         display: block;
         filter: grayscale(100%);
         transition: filter 0.5s ease;
+        border: 1px solid #222;
       }
 
       .profile-image-container:hover img {
@@ -266,9 +332,9 @@
       /* Small geometric overlays for tech look */
       .corner-line {
         position: absolute;
-        width: 10px;
-        height: 10px;
-        border: 1px solid #b300ff;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #00e5ff;
       }
       .top-left { top: -2px; left: -2px; border-right: none; border-bottom: none; }
       .top-right { top: -2px; right: -2px; border-left: none; border-bottom: none; }
@@ -276,15 +342,18 @@
       .bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
       .bio-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         color: #ffffff;
         margin-bottom: 24px;
-        line-height: 1.4;
+        line-height: 1.5;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
       }
 
       .bio-text {
-        font-size: 0.95rem;
-        color: #9e9e9e;
+        font-size: 11px;
+        color: #888888;
         line-height: 1.8;
         font-weight: 300;
         margin-bottom: 32px;
@@ -294,7 +363,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
-        border-top: 1px dashed #1a1a1a;
+        border-top: 1px solid #1a1a1a;
         padding-top: 32px;
       }
 
@@ -302,56 +371,60 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        border-left: 1px solid rgba(0, 229, 255, 0.2);
+        padding-left: 16px;
       }
 
       .stat-label {
-        font-size: 0.75rem;
+        font-size: 10px;
         text-transform: uppercase;
-        color: #616161;
-        letter-spacing: 1px;
+        color: #555555;
+        letter-spacing: 1.5px;
       }
 
       .stat-value {
-        font-size: 1rem;
+        font-size: 11px;
         color: #e0e0e0;
-        font-weight: 500;
+        font-weight: bold;
+        text-transform: uppercase;
       }
 
-      /* Project Grid and Cards */
+      /* Project Grid and Cards styled like "Clean Minimalism" */
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 24px;
       }
 
       .project-card {
         border: 1px solid #1a1a1a;
-        background-color: rgba(10, 10, 10, 0.7);
+        background-color: #080808;
         display: flex;
         flex-direction: column;
         padding: 24px;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         cursor: pointer;
         position: relative;
       }
 
       .project-card:hover {
-        border-color: #00e5ff;
-        box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
-        transform: translateY(-4px);
+        border-color: rgba(0, 229, 255, 0.4);
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+        transform: translateY(-2px);
       }
 
+      /* Hover States from theme: grayscale to color mapping on image hover, distinct neon glow borders */
       .project-card:nth-child(even):hover {
-        border-color: #b300ff;
-        box-shadow: 0 0 25px rgba(179, 0, 255, 0.15);
+        border-color: rgba(179, 0, 255, 0.4);
+        box-shadow: 0 0 20px rgba(179, 0, 255, 0.1);
       }
 
       .project-img-box {
         position: relative;
         width: 100%;
-        height: 240px;
+        height: 200px;
         overflow: hidden;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         border: 1px solid #1a1a1a;
       }
 
@@ -360,48 +433,53 @@
         height: 100%;
         object-fit: cover;
         filter: grayscale(100%);
-        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.5s ease;
       }
 
       .project-card:hover .project-img-box img {
         filter: grayscale(0%);
-        transform: scale(1.05);
       }
 
       .project-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
       }
 
+      /* Strict Theme styling of badges with fine color-borders */
       .project-tag {
-        font-size: 0.75rem;
-        color: #00e5ff;
+        font-size: 8px;
+        border: 1px solid rgba(0, 229, 255, 0.3);
+        padding: 3px 6px;
+        color: rgba(0, 229, 255, 0.7);
         text-transform: uppercase;
-        font-weight: 500;
+        font-weight: bold;
       }
 
       .project-card:nth-child(even) .project-tag {
-        color: #b300ff;
+        border-color: rgba(179, 0, 255, 0.3);
+        color: rgba(179, 0, 255, 0.7);
       }
 
       .project-index {
-        font-size: 0.8rem;
-        color: #616161;
+        font-size: 9px;
+        color: #555555;
+        text-transform: uppercase;
       }
 
       .project-title {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         color: #ffffff;
         margin-bottom: 12px;
         text-transform: uppercase;
-        font-weight: 500;
+        font-weight: 700;
+        letter-spacing: -0.01em;
       }
 
       .project-desc {
-        font-size: 0.85rem;
-        color: #9e9e9e;
+        font-size: 10px;
+        color: #666666;
         line-height: 1.6;
         font-weight: 300;
         margin-bottom: 24px;
@@ -409,13 +487,15 @@
       }
 
       .project-link-indicator {
-        font-size: 0.8rem;
+        font-size: 10px;
         text-transform: uppercase;
-        color: #e0e0e0;
+        color: #444444;
         display: flex;
         align-items: center;
         gap: 8px;
         transition: color 0.3s ease;
+        font-weight: bold;
+        letter-spacing: 0.05em;
       }
 
       .project-card:hover .project-link-indicator {
@@ -426,10 +506,10 @@
         color: #b300ff;
       }
 
-      /* Contact and Institutional Footer */
+      /* Contact Panel */
       .contact-banner {
         border: 1px solid #1a1a1a;
-        background-color: rgba(10, 10, 10, 0.9);
+        background-color: #080808;
         padding: 48px;
         display: flex;
         flex-direction: column;
@@ -440,61 +520,88 @@
         position: relative;
       }
 
+      .contact-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #00e5ff, #b300ff);
+      }
+
       .contact-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         text-transform: uppercase;
         color: #ffffff;
+        letter-spacing: 0.05em;
       }
 
       .contact-desc {
-        font-size: 0.9rem;
-        color: #9e9e9e;
+        font-size: 11px;
+        color: #888888;
         max-width: 600px;
-        line-height: 1.6;
+        line-height: 1.8;
         margin-bottom: 12px;
       }
 
       .contact-links {
         display: flex;
-        gap: 24px;
+        gap: 32px;
         flex-wrap: wrap;
         justify-content: center;
       }
 
       .contact-link-item {
-        color: #eeeeee;
+        color: #666666;
         text-decoration: none;
-        border-bottom: 1px solid #00e5ff;
+        border-bottom: 1px solid transparent;
         padding-bottom: 2px;
-        font-size: 0.85rem;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
         transition: all 0.3s ease;
       }
 
       .contact-link-item:hover {
         color: #00e5ff;
-        border-color: #ffffff;
+        border-color: #00e5ff;
       }
 
+      /* Systems Footer from theme */
       footer {
-        padding: 40px 0;
+        padding: 32px 0 0 0;
         border-top: 1px solid #1a1a1a;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.75rem;
-        color: #616161;
+        font-size: 10px;
+        color: #444444;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
       }
 
       footer .footer-left {
         display: flex;
+        align-items: center;
         gap: 16px;
+      }
+
+      /* Small terminal color indicator block */
+      footer .footer-left::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid rgba(0, 229, 255, 0.4);
+        background-color: rgba(0, 229, 255, 0.1);
       }
 
       /* Intersection Observer animations configuration */
       .reveal {
         opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(20px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .reveal.revealed {
@@ -502,26 +609,29 @@
         transform: translateY(0);
       }
 
-      /* Mobile and Responsive viewports */
+      /* Responsive Rules */
       @media (max-width: 900px) {
-        .app-wrapper {
-          border-left: none;
-          border-right: none;
+        header.hero-section {
+          padding-right: 0;
         }
-
+        header.hero-section::after {
+          position: static;
+          transform: none;
+          text-align: left;
+          margin-top: 24px;
+          display: block;
+        }
         .bio-grid {
           grid-template-columns: 1fr;
           gap: 40px;
         }
-
         .profile-image-container {
-          max-width: 380px;
+          max-width: 280px;
           margin: 0 auto;
         }
-
         .projects-grid {
           grid-template-columns: 1fr;
-          gap: 32px;
+          gap: 24px;
         }
       }
 
@@ -531,30 +641,170 @@
           gap: 24px;
           align-items: flex-start;
         }
-
         .nav-links {
           flex-direction: column;
           align-items: flex-start;
           gap: 16px;
           width: 100%;
         }
-
         .btn-terminal {
           align-self: flex-start;
         }
-
         header.hero-section {
-          padding: 60px 0;
+          padding: 40px 0;
         }
-
         .contact-banner {
-          padding: 32px 16px;
+          padding: 32px 20px;
         }
-
         footer {
           flex-direction: column;
           gap: 16px;
           align-items: flex-start;
+        }
+      }
+
+      /* Custom Modal Styles */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(5, 5, 5, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 24px;
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-container {
+        width: 100%;
+        max-width: 850px;
+        background-color: #080808;
+        border: 1px solid rgba(0, 229, 255, 0.3);
+        padding: 40px;
+        position: relative;
+        transform: scale(0.95);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .modal-overlay.active .modal-container {
+        transform: scale(1);
+      }
+
+      .modal-corners {
+        pointer-events: none;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+      }
+
+      .modal-subtitle {
+        font-size: 10px;
+        color: #555555;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      .modal-close {
+        background: none;
+        border: none;
+        color: #666666;
+        font-size: 24px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        line-height: 1;
+      }
+
+      .modal-close:hover {
+        color: #00e5ff;
+      }
+
+      .modal-content {
+        display: grid;
+        grid-template-columns: 1.12fr 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .modal-img-wrapper {
+        border: 1px solid #1a1a1a;
+        background-color: #050505;
+        height: 320px;
+        overflow: hidden;
+      }
+
+      .modal-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .modal-info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .modal-tag-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .modal-title-text {
+        font-size: 1.4rem;
+        color: #ffffff;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+      }
+
+      .modal-desc-text {
+        font-size: 11px;
+        color: #888888;
+        line-height: 1.8;
+        margin-bottom: 32px;
+      }
+
+      .modal-action-row {
+        margin-top: auto;
+        border-top: 1px dashed #1a1a1a;
+        padding-top: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .modal-container {
+          padding: 24px;
+        }
+        .modal-content {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .modal-img-wrapper {
+          height: 220px;
         }
       }
     </style>
@@ -575,7 +825,7 @@
           <li><a href="#contact">Contact</a></li>
           <li>
             <a href="#" class="btn-terminal" id="cv-btn">
-              Download CV <span style="margin-left: 8px;">&darr;</span>
+              Download_CV.sh
             </a>
           </li>
         </ul>
@@ -606,7 +856,7 @@
             <div class="corner-line bottom-left"></div>
             <div class="corner-line bottom-right"></div>
             <img 
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" 
               alt="Hiyab Teklu - Architect Portrait" 
               referrerpolicy="no-referrer"
             />
@@ -766,6 +1016,41 @@
       </footer>
     </div>
 
+    <!-- Modal Window (V3 Institutional Aesthetic) -->
+    <div id="project-modal" class="modal-overlay">
+      <div class="modal-container">
+        <!-- Structural Corner Indicators -->
+        <div class="modal-corners">
+          <div class="corner-line top-left"></div>
+          <div class="corner-line top-right"></div>
+          <div class="corner-line bottom-left"></div>
+          <div class="corner-line bottom-right"></div>
+        </div>
+        <div class="modal-header">
+          <div class="modal-subtitle">// ARCHITECTURAL INTEL NODE DETAILS</div>
+          <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-content">
+          <div class="modal-img-wrapper">
+            <img id="modal-img" src="" alt="Project Visualizer" referrerpolicy="no-referrer">
+          </div>
+          <div class="modal-info">
+            <div class="modal-tag-row">
+              <span id="modal-tag" class="project-tag">SATELLITE DYNAMICS</span>
+              <span id="modal-index" class="project-index">01 // CODEBASE</span>
+            </div>
+            <h2 id="modal-title" class="modal-title-text">PROJECT ZERO-ONE</h2>
+            <p id="modal-desc" class="modal-desc-text">Synthesizing spatial system models with high fidelity...</p>
+            <div class="modal-action-row">
+              <button class="btn-terminal cyan-accent" id="modal-action-btn" style="width: 100%;">
+                EXECUTE NODE REPROSECURE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Vanilla Javascript Logic -->
     <script>
       // 1. Dynamic Typewriter Effect for Hero Header subtitle
@@ -916,12 +1201,79 @@
         revealObserver.observe(el);
       });
 
-      // Simple click interaction notice
+      // V3 Interactive Modal Handler
+      const modalOverlay = document.getElementById("project-modal");
+      const modalImg = document.getElementById("modal-img");
+      const modalTag = document.getElementById("modal-tag");
+      const modalIndex = document.getElementById("modal-index");
+      const modalTitle = document.getElementById("modal-title");
+      const modalDesc = document.getElementById("modal-desc");
+      const modalCloseBtn = document.getElementById("modal-close-btn");
+      const modalActionBtn = document.getElementById("modal-action-btn");
+
       document.querySelectorAll(".project-card").forEach(card => {
-        card.addEventListener("click", () => {
-          const title = card.querySelector(".project-title").innerText;
-          console.log(`Navigating to architectural node for: ${title}`);
+        card.addEventListener("click", (e) => {
+          e.preventDefault();
+          
+          const imgUrl = card.querySelector(".project-img-box img").src;
+          const tagText = card.querySelector(".project-tag").textContent;
+          const indexText = card.querySelector(".project-index").textContent;
+          const titleText = card.querySelector(".project-title").textContent;
+          const descText = card.querySelector(".project-desc").textContent;
+
+          // Populate modal fields
+          modalImg.src = imgUrl;
+          modalTag.textContent = tagText;
+          modalIndex.textContent = indexText;
+          modalTitle.textContent = titleText;
+          modalDesc.textContent = descText;
+
+          // Dynamic structural accent styling based on project sequence node type
+          const isEven = indexText.includes("02 //") || indexText.includes("04 //");
+          const container = modalOverlay.querySelector(".modal-container");
+          
+          if (isEven) {
+            container.style.borderColor = "rgba(179, 0, 255, 0.45)";
+            container.style.boxShadow = "0 0 35px rgba(179, 0, 255, 0.15)";
+            modalTag.className = "project-tag";
+            modalTag.style.borderColor = "rgba(179, 0, 255, 0.4)";
+            modalTag.style.color = "rgba(179, 0, 255, 0.9)";
+            modalActionBtn.className = "btn-terminal";
+            modalActionBtn.textContent = "EXECUTE EVEN INTEGRAL NODE";
+          } else {
+            container.style.borderColor = "rgba(0, 229, 255, 0.45)";
+            container.style.boxShadow = "0 0 35px rgba(0, 229, 255, 0.15)";
+            modalTag.className = "project-tag";
+            modalTag.style.borderColor = "rgba(0, 229, 255, 0.4)";
+            modalTag.style.color = "rgba(0, 229, 255, 0.9)";
+            modalActionBtn.className = "btn-terminal cyan-accent";
+            modalActionBtn.textContent = "EXECUTE ODD INTEGRAL NODE";
+          }
+
+          // Open the modal container
+          modalOverlay.classList.add("active");
+          document.body.style.overflow = "hidden"; // Disable background wrapper scrolling
         });
+      });
+
+      function closeModal() {
+        modalOverlay.classList.remove("active");
+        document.body.style.overflow = ""; // Enable normal page scrolling
+      }
+
+      // Action listener for closing trigger elements
+      modalCloseBtn.addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) {
+          closeModal();
+        }
+      });
+
+      // Escape key event for accessible navigation closure
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
+          closeModal();
+        }
       });
     </script>
   </body>
