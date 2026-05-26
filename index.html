@@ -5,43 +5,280 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiyab Teklu | Deep Tech Architect</title>
     <style>
-        body { font-family: 'Courier New', Courier, monospace; background-color: #000000; color: #FFFFFF; margin: 0; padding: 5%; line-height: 1.6; }
-        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333333; padding-bottom: 5px; }
-        .container { max-width: 900px; margin: auto; }
-        .section { margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media (min-width: 600px) { .grid { grid-template-columns: 1fr 1fr; } }
-        .card { border: 1px solid #333333; padding: 20px; }
+        :root {
+            --bg-base: #050505;
+            --text-main: #f4f4f4;
+            --text-muted: #888888;
+            --accent-1: #00e5ff;
+            --accent-2: #b300ff;
+            --border-grid: #222222;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Dynamic Background Overlay */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(0, 229, 255, 0.03), rgba(179, 0, 255, 0.03));
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(to right, var(--accent-1), var(--accent-2)) 1;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-1);
+            margin-top: 60px;
+            border-bottom: 1px solid var(--border-grid);
+            padding-bottom: 10px;
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 300px 1fr;
+            }
+        }
+
+        .profile-image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border: 1px solid var(--border-grid);
+            background-color: #111;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.4s ease;
+        }
+
+        .profile-image-container:hover {
+            border-color: var(--accent-1);
+        }
+
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.4s ease;
+        }
+
+        .profile-image-container:hover img {
+            filter: grayscale(0%);
+        }
+
+        .btn {
+            display: inline-block;
+            border: 1px solid var(--accent-1);
+            color: var(--accent-1);
+            padding: 12px 24px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-1);
+            color: var(--bg-base);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .project-card {
+            border: 1px solid var(--border-grid);
+            background: rgba(10, 10, 10, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-2);
+            box-shadow: 0 10px 20px rgba(179, 0, 255, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #111;
+            border-bottom: 1px solid var(--border-grid);
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .project-content h3 {
+            color: var(--accent-2);
+            font-size: 1.2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            border: 1px solid var(--text-muted);
+            padding: 4px 8px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
     </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
     <div class="container">
-        <div class="section">
+        
+        <header>
             <h1>Hiyab Teklu</h1>
-            <p>Deep Tech Architect | Techno-Visionary Executor</p>
-            <p>Haramaya University</p>
-        </div>
-        <div class="section">
-            <h2>System Overview</h2>
-            <p>Specializing in artificial intelligence, electromagnetic systems, and high-scale community infrastructure. Focused on developing technological sovereignty through rigorous engineering and execution.</p>
-        </div>
-        <div class="section">
-            <h2>Active Operations</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Project Zero-One</h3>
-                    <p>Cinematic AI telemetry and heavy-lift rocket launch visualization. Utilizing high-end AI generation protocols for satellite deployment sequences.</p>
-                </div>
-                <div class="card">
-                    <h3>Wisdom Tower Infrastructure</h3>
-                    <p>Scaled academic distribution network. Managing 22,000+ members and 5,000+ resources via optimized algorithmic community management.</p>
-                </div>
+            <p style="color: var(--text-muted); font-size: 1.1rem; text-transform: uppercase;">
+                Deep Tech Architect | Techno-Visionary Executor
+            </p>
+        </header>
+
+        <section class="profile-grid">
+            <div class="profile-image-container">
+                <!-- Replace 'profile.jpg' with your actual image file name once uploaded to GitHub -->
+                <img src="profile.jpg" alt="Hiyab Teklu">
             </div>
-        </div>
-        <div class="section">
-            <h2>Contact & Telemetry</h2>
-            <p>Email: hiyabteklu720@gmail.com</p>
-        </div>
+            <div>
+                <h2>System Overview</h2>
+                <p>Specializing in artificial intelligence, electromagnetic systems, and high-scale community infrastructure. Focused on developing technological sovereignty through rigorous engineering and institutional-grade execution.</p>
+                <p>Operating out of Haramaya University, driving innovations from semiconductor physics to high-end cinematic AI telemetry.</p>
+                <!-- Replace # with your Google Drive CV link -->
+                <a href="#" class="btn" target="_blank">Download Exec. Profile (CV)</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Active Operations Matrix</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <!-- Upload a project image to GitHub and replace 'project1.jpg' -->
+                    <img src="project1.jpg" alt="Project Zero-One" class="project-image">
+                    <div class="project-content">
+                        <h3>Project Zero-One</h3>
+                        <p>Cinematic documentary architecture focusing on Ethiopian satellite telemetry and heavy-lift rocket launches. Utilizing AI-generated visual rendering for film-grade CGI output.</p>
+                        <div class="tech-stack">
+                            <span class="tag">AI Rendering</span>
+                            <span class="tag">CGI</span>
+                            <span class="tag">Telemetry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Ehud AI" class="project-image">
+                    <div class="project-content">
+                        <h3>Ehud AI Infrastructure</h3>
+                        <p>Technical collaboration executing performance-based testing and high-fidelity AI-generated storytelling, leveraging a 180,000 algorithmic credit allocation.</p>
+                        <div class="tech-stack">
+                            <span class="tag">AI Storytelling</span>
+                            <span class="tag">System Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Wisdom Tower" class="project-image">
+                    <div class="project-content">
+                        <h3>Wisdom Tower Network</h3>
+                        <p>Designed and scaled an institutional academic distribution network. Currently managing 22,000+ members and 5,000+ resources via API-based load distribution and member extraction strategies.</p>
+                        <div class="tech-stack">
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Scaling</span>
+                            <span class="tag">Modded Clients</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="project4.jpg" alt="Austrian Embassy" class="project-image">
+                    <div class="project-content">
+                        <h3>From Currency to Continuity</h3>
+                        <p>Award-winning technical architecture. Secured first place in the 2026 Austrian Embassy innovation competition.</p>
+                        <div class="tech-stack">
+                            <span class="tag">Technical Writing</span>
+                            <span class="tag">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer style="margin-top: 80px; text-align: center; color: var(--text-muted); border-top: 1px solid var(--border-grid); padding-top: 20px; font-size: 0.8rem;">
+            SYSTEM TERMINAL // HIYAB TEKLU // HARAMAYA UNIVERSITY
+        </footer>
+
     </div>
 </body>
 </html>
