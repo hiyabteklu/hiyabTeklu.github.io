@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hiyab Teklu | Engineering Portfolio & STEM Educator</title>
-    <!-- Font Pairing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
-      /* Zero rounded corners requirement */
       * {
         box-sizing: border-box;
         margin: 0;
@@ -19,7 +17,6 @@
         font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
       }
 
-      /* Strict dark mode and layout */
       html, body {
         background-color: #050505;
         color: #e0e0e0;
@@ -29,13 +26,11 @@
         font-size: 13px;
       }
 
-      /* Selection styling */
       ::selection {
         background: rgba(0, 229, 255, 0.2);
         color: #ffffff;
       }
 
-      /* Fullscreen Canvas Background */
       #canvas-bg {
         position: fixed;
         top: 0;
@@ -47,7 +42,6 @@
         opacity: 0.25;
       }
 
-      /* Main Layout and Container matching Clean Minimalism outline */
       .app-wrapper {
         position: relative;
         z-index: 1;
@@ -71,7 +65,6 @@
         }
       }
 
-      /* Minimal Navigation */
       nav {
         display: flex;
         justify-content: space-between;
@@ -95,7 +88,7 @@
       .nav-logo span {
         color: #555555;
         font-weight: 300;
-        }
+      }
 
       .nav-links {
         display: flex;
@@ -118,7 +111,6 @@
         text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
       }
 
-      /* Beautiful terminal style button from Clean Minimalism sample */
       .btn-terminal {
         display: inline-flex;
         align-items: center;
@@ -149,9 +141,7 @@
         transition: all 0.5s ease;
       }
 
-      .btn-terminal:hover::before {
-        left: 100%;
-      }
+      .btn-terminal:hover::before { left: 100%; }
 
       .btn-terminal:hover {
         box-shadow: 0 0 15px rgba(179, 0, 255, 0.45);
@@ -159,7 +149,6 @@
         color: #050505;
       }
 
-      /* Cyan variation */
       .btn-terminal.cyan-accent {
         color: #00e5ff;
         border-color: #00e5ff;
@@ -175,12 +164,11 @@
         color: #050505;
       }
 
-      /* Hero Header Section */
       header.hero-section {
         padding: 60px 0 80px 0;
         border-bottom: 1px solid #1a1a1a;
         position: relative;
-        padding-right: 320px; /* Space for absolute stats panel */
+        padding-right: 320px;
       }
 
       .institution-tag {
@@ -243,7 +231,6 @@
         50% { opacity: 0; }
       }
 
-      /* Right absolute info terminal on Hero */
       header.hero-section::after {
         content: "STUDENT RECORD // PROTOTYPE\nHARAMAYA UNIVERSITY\nLAT: 9.4173 | LON: 42.0315";
         white-space: pre-line;
@@ -260,7 +247,6 @@
         letter-spacing: 0.05em;
       }
 
-      /* Main Grid Structure */
       .section-layout {
         padding: 80px 0;
         border-bottom: 1px solid #1a1a1a;
@@ -295,7 +281,6 @@
         letter-spacing: 0.2em;
       }
 
-      /* Biography / Profile Section Details */
       .bio-grid {
         display: grid;
         grid-template-columns: 320px 1fr;
@@ -325,11 +310,8 @@
         border: 1px solid #222;
       }
 
-      .profile-image-container:hover img {
-        filter: grayscale(0%);
-      }
+      .profile-image-container:hover img { filter: grayscale(0%); }
 
-      /* Small geometric overlays for tech look */
       .corner-line {
         position: absolute;
         width: 12px;
@@ -342,10 +324,10 @@
       .bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
       .bio-content h3 {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         color: #ffffff;
         margin-bottom: 24px;
-        line-height: 1.5;
+        line-height: 1.6;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: -0.02em;
@@ -389,7 +371,6 @@
         text-transform: uppercase;
       }
 
-      /* Project Grid and Cards styled like "Clean Minimalism" */
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -413,7 +394,6 @@
         transform: translateY(-2px);
       }
 
-      /* Hover States from theme: grayscale to color mapping on image hover, distinct neon glow borders */
       .project-card:nth-child(even):hover {
         border-color: rgba(179, 0, 255, 0.4);
         box-shadow: 0 0 20px rgba(179, 0, 255, 0.1);
@@ -436,9 +416,7 @@
         transition: all 0.5s ease;
       }
 
-      .project-card:hover .project-img-box img {
-        filter: grayscale(0%);
-      }
+      .project-card:hover .project-img-box img { filter: grayscale(0%); }
 
       .project-meta {
         display: flex;
@@ -447,7 +425,6 @@
         margin-bottom: 16px;
       }
 
-      /* Strict Theme styling of badges with fine color-borders */
       .project-tag {
         font-size: 8px;
         border: 1px solid rgba(0, 229, 255, 0.3);
@@ -498,15 +475,9 @@
         letter-spacing: 0.05em;
       }
 
-      .project-card:hover .project-link-indicator {
-        color: #00e5ff;
-      }
+      .project-card:hover .project-link-indicator { color: #00e5ff; }
+      .project-card:nth-child(even):hover .project-link-indicator { color: #b300ff; }
 
-      .project-card:nth-child(even):hover .project-link-indicator {
-        color: #b300ff;
-      }
-
-      /* Contact Panel */
       .contact-banner {
         border: 1px solid #1a1a1a;
         background-color: #080808;
@@ -568,7 +539,6 @@
         border-color: #00e5ff;
       }
 
-      /* Systems Footer from theme */
       footer {
         padding: 32px 0 0 0;
         border-top: 1px solid #1a1a1a;
@@ -587,7 +557,6 @@
         gap: 16px;
       }
 
-      /* Small terminal color indicator block */
       footer .footer-left::before {
         content: '';
         display: inline-block;
@@ -597,7 +566,6 @@
         background-color: rgba(0, 229, 255, 0.1);
       }
 
-      /* Intersection Observer animations configuration */
       .reveal {
         opacity: 0;
         transform: translateY(20px);
@@ -609,13 +577,13 @@
         transform: translateY(0);
       }
 
-      /* Metrics Section Styling */
       .metrics-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
         margin-top: 20px;
       }
+
       .metric-block {
         border-left: 2px solid rgba(0, 229, 255, 0.25);
         padding-left: 20px;
@@ -624,21 +592,19 @@
         gap: 8px;
         transition: border-color 0.3s ease;
       }
-      .metric-block:hover {
-        border-color: #b300ff;
-      }
-      .metric-block:nth-child(even) {
-        border-left-color: rgba(179, 0, 255, 0.25);
-      }
-      .metric-block:nth-child(even):hover {
-        border-color: #00e5ff;
-      }
+
+      .metric-block:hover { border-color: #b300ff; }
+
+      .metric-block:nth-child(even) { border-left-color: rgba(179, 0, 255, 0.25); }
+      .metric-block:nth-child(even):hover { border-color: #00e5ff; }
+
       .metric-num {
         font-size: 2.2rem;
         font-weight: 700;
         color: #ffffff;
         letter-spacing: -1px;
       }
+
       .metric-title {
         font-size: 10px;
         text-transform: uppercase;
@@ -646,9 +612,9 @@
         font-weight: bold;
         letter-spacing: 1.5px;
       }
-      .metric-block:nth-child(even) .metric-title {
-        color: #b300ff;
-      }
+
+      .metric-block:nth-child(even) .metric-title { color: #b300ff; }
+
       .metric-detail {
         font-size: 11px;
         color: #888888;
@@ -656,21 +622,14 @@
       }
 
       @media (max-width: 900px) {
-        .metrics-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
+        .metrics-grid { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 480px) {
-        .metrics-grid {
-          grid-template-columns: 1fr;
-        }
+        .metrics-grid { grid-template-columns: 1fr; }
       }
 
-      /* Responsive Rules */
       @media (max-width: 900px) {
-        header.hero-section {
-          padding-right: 0;
-        }
+        header.hero-section { padding-right: 0; }
         header.hero-section::after {
           position: static;
           transform: none;
@@ -678,49 +637,20 @@
           margin-top: 24px;
           display: block;
         }
-        .bio-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .profile-image-container {
-          max-width: 280px;
-          margin: 0 auto;
-        }
-        .projects-grid {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
+        .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+        .profile-image-container { max-width: 280px; margin: 0 auto; }
+        .projects-grid { grid-template-columns: 1fr; gap: 24px; }
       }
 
       @media (max-width: 640px) {
-        nav {
-          flex-direction: column;
-          gap: 24px;
-          align-items: flex-start;
-        }
-        .nav-links {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 16px;
-          width: 100%;
-        }
-        .btn-terminal {
-          align-self: flex-start;
-        }
-        header.hero-section {
-          padding: 40px 0;
-        }
-        .contact-banner {
-          padding: 32px 20px;
-        }
-        footer {
-          flex-direction: column;
-          gap: 16px;
-          align-items: flex-start;
-        }
+        nav { flex-direction: column; gap: 24px; align-items: flex-start; }
+        .nav-links { flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; }
+        .btn-terminal { align-self: flex-start; }
+        header.hero-section { padding: 40px 0; }
+        .contact-banner { padding: 32px 20px; }
+        footer { flex-direction: column; gap: 16px; align-items: flex-start; }
       }
 
-      /* Custom Modal Styles */
       .modal-overlay {
         position: fixed;
         top: 0;
@@ -740,10 +670,7 @@
         padding: 24px;
       }
 
-      .modal-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-      }
+      .modal-overlay.active { opacity: 1; pointer-events: auto; }
 
       .modal-container {
         width: 100%;
@@ -758,13 +685,7 @@
         overflow-y: auto;
       }
 
-      .modal-overlay.active .modal-container {
-        transform: scale(1);
-      }
-
-      .modal-corners {
-        pointer-events: none;
-      }
+      .modal-overlay.active .modal-container { transform: scale(1); }
 
       .modal-header {
         display: flex;
@@ -792,9 +713,7 @@
         line-height: 1;
       }
 
-      .modal-close:hover {
-        color: #00e5ff;
-      }
+      .modal-close:hover { color: #00e5ff; }
 
       .modal-content {
         display: grid;
@@ -810,17 +729,9 @@
         overflow: hidden;
       }
 
-      .modal-img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      .modal-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
-      .modal-info {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
+      .modal-info { display: flex; flex-direction: column; height: 100%; }
 
       .modal-tag-row {
         display: flex;
@@ -853,19 +764,11 @@
       }
 
       @media (max-width: 768px) {
-        .modal-container {
-          padding: 24px;
-        }
-        .modal-content {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        .modal-img-wrapper {
-          height: 220px;
-        }
+        .modal-container { padding: 24px; }
+        .modal-content { grid-template-columns: 1fr; gap: 24px; }
+        .modal-img-wrapper { height: 220px; }
       }
 
-      /* Custom Simple & High-Contrast Student Link Styling */
       .bio-inline-link {
         color: #00e5ff;
         text-decoration: underline;
@@ -878,21 +781,19 @@
         color: #ffffff;
         text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
       }
-      .bio-inline-link.purple {
-        color: #b300ff;
-      }
+      .bio-inline-link.purple { color: #b300ff; }
       .bio-inline-link.purple:hover {
         color: #ffffff;
         text-shadow: 0 0 8px rgba(179, 0, 255, 0.4);
       }
 
-      /* Track Record Structural Layout (Inspired by Mulu Luna's Portfolio) */
       .track-record-list {
         display: flex;
         flex-direction: column;
         gap: 40px;
         margin-top: 24px;
       }
+
       .record-item {
         border: 1px solid #1a1a1a;
         background-color: #080808;
@@ -900,14 +801,17 @@
         position: relative;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
       }
+
       .record-item:hover {
         border-color: rgba(0, 229, 255, 0.35);
         box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
       }
+
       .record-item:nth-child(even):hover {
         border-color: rgba(179, 0, 255, 0.35);
         box-shadow: 0 0 25px rgba(179, 0, 255, 0.08);
       }
+
       .record-header {
         display: flex;
         justify-content: space-between;
@@ -918,6 +822,7 @@
         flex-wrap: wrap;
         gap: 16px;
       }
+
       .record-title-group h3 {
         font-size: 1.3rem;
         color: #ffffff;
@@ -925,6 +830,7 @@
         font-weight: 700;
         letter-spacing: -0.5px;
       }
+
       .record-role {
         font-size: 11px;
         color: #00e5ff;
@@ -933,33 +839,32 @@
         margin-top: 4px;
         font-weight: 500;
       }
-      .record-item:nth-child(even) .record-role {
-        color: #b300ff;
-      }
+
+      .record-item:nth-child(even) .record-role { color: #b300ff; }
+
       .record-period {
         font-size: 11px;
         color: #666666;
         text-align: right;
         font-family: 'JetBrains Mono', monospace;
       }
+
       .narrative-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
       }
+
       @media (max-width: 768px) {
-        .narrative-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-        .record-period {
-          text-align: left;
-        }
+        .narrative-grid { grid-template-columns: 1fr; gap: 20px; }
+        .record-period { text-align: left; }
       }
+
       .narrative-block {
         border-left: 1px solid #1a1a1a;
         padding-left: 16px;
       }
+
       .narrative-label {
         font-size: 9px;
         text-transform: uppercase;
@@ -968,46 +873,44 @@
         letter-spacing: 1.5px;
         margin-bottom: 6px;
       }
-      .record-item:nth-child(even) .narrative-label {
-        color: #b300ff;
-      }
+
+      .record-item:nth-child(even) .narrative-label { color: #b300ff; }
+
       .narrative-text {
         font-size: 11px;
         color: #888888;
         line-height: 1.7;
       }
 
-      /* Credentials Section Stylings */
       .credentials-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
       }
+
       @media (max-width: 900px) {
-        .credentials-grid {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
+        .credentials-grid { grid-template-columns: 1fr; gap: 16px; }
       }
+
       .credential-card {
         border: 1px solid #111111;
         background-color: #060606;
         padding: 24px;
         position: relative;
         transition: border-color 0.3s ease;
+        cursor: pointer;
       }
-      .credential-card:hover {
-        border-color: rgba(179, 0, 255, 0.25);
-      }
-      .credential-card:nth-child(even):hover {
-        border-color: rgba(0, 229, 255, 0.25);
-      }
+
+      .credential-card:hover { border-color: rgba(179, 0, 255, 0.25); }
+      .credential-card:nth-child(even):hover { border-color: rgba(0, 229, 255, 0.25); }
+
       .cred-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 12px;
       }
+
       .cred-badge {
         font-size: 8px;
         padding: 2px 6px;
@@ -1017,15 +920,15 @@
         text-transform: uppercase;
         font-weight: bold;
       }
+
       .credential-card:nth-child(even) .cred-badge {
         background-color: rgba(179, 0, 255, 0.05);
         border: 1px solid rgba(179, 0, 255, 0.2);
         color: #b300ff;
       }
-      .cred-period {
-        font-size: 9px;
-        color: #444444;
-      }
+
+      .cred-period { font-size: 9px; color: #444444; }
+
       .cred-title {
         font-size: 11px;
         font-weight: 700;
@@ -1033,6 +936,7 @@
         text-transform: uppercase;
         margin-bottom: 4px;
       }
+
       .cred-institution {
         font-size: 10px;
         color: #888888;
@@ -1040,6 +944,7 @@
         letter-spacing: 0.5px;
         margin-bottom: 12px;
       }
+
       .cred-skills {
         font-size: 9px;
         color: #555555;
@@ -1048,18 +953,17 @@
         text-transform: uppercase;
       }
 
-      /* Award Ribbon Layout */
       .awards-panel {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
         margin-bottom: 40px;
       }
+
       @media (max-width: 768px) {
-        .awards-panel {
-          grid-template-columns: 1fr;
-        }
+        .awards-panel { grid-template-columns: 1fr; }
       }
+
       .award-ribbon {
         border-left: 3px solid #b300ff;
         background-color: #080808;
@@ -1069,21 +973,18 @@
         gap: 8px;
         transition: border-color 0.3s ease;
       }
-      .award-ribbon:nth-child(even) {
-        border-left-color: #00e5ff;
-      }
-      .award-ribbon:hover {
-        border-left-color: #00e5ff;
-      }
-      .award-ribbon:nth-child(even):hover {
-        border-left-color: #b300ff;
-      }
+
+      .award-ribbon:nth-child(even) { border-left-color: #00e5ff; }
+      .award-ribbon:hover { border-left-color: #00e5ff; }
+      .award-ribbon:nth-child(even):hover { border-left-color: #b300ff; }
+
       .award-title {
         font-size: 1.1rem;
         font-weight: bold;
         color: #ffffff;
         text-transform: uppercase;
       }
+
       .award-rank {
         font-size: 10px;
         text-transform: uppercase;
@@ -1091,16 +992,15 @@
         font-weight: bold;
         letter-spacing: 1px;
       }
-      .award-ribbon:nth-child(even) .award-rank {
-        color: #b300ff;
-      }
+
+      .award-ribbon:nth-child(even) .award-rank { color: #b300ff; }
+
       .award-desc {
         font-size: 11px;
         color: #777777;
         line-height: 1.6;
       }
 
-      /* Technical Skills Section CSS rules */
       .skills-intro {
         font-size: 13px;
         color: #888888;
@@ -1108,18 +1008,18 @@
         margin-bottom: 32px;
         max-width: 800px;
       }
+
       .skills-categories-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
         margin-bottom: 24px;
       }
+
       @media (max-width: 992px) {
-        .skills-categories-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
+        .skills-categories-grid { grid-template-columns: 1fr; gap: 20px; }
       }
+
       .skills-category-card {
         background-color: #060606;
         border: 1px solid #111111;
@@ -1130,14 +1030,17 @@
         gap: 16px;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
       }
+
       .skills-category-card.cyan-accent:hover {
         border-color: rgba(0, 229, 255, 0.35);
         box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
       }
+
       .skills-category-card.purple-accent:hover {
         border-color: rgba(179, 0, 255, 0.35);
         box-shadow: 0 0 25px rgba(179, 0, 255, 0.08);
       }
+
       .skills-category-icon-title {
         display: flex;
         justify-content: space-between;
@@ -1146,6 +1049,7 @@
         padding-bottom: 12px;
         margin-bottom: 4px;
       }
+
       .skills-category-title {
         font-size: 11px;
         text-transform: uppercase;
@@ -1153,24 +1057,24 @@
         letter-spacing: 2px;
         color: #ffffff;
       }
-      .skills-category-card.cyan-accent .skills-category-title {
-        color: #00e5ff;
-      }
-      .skills-category-card.purple-accent .skills-category-title {
-        color: #b300ff;
-      }
+
+      .skills-category-card.cyan-accent .skills-category-title { color: #00e5ff; }
+      .skills-category-card.purple-accent .skills-category-title { color: #b300ff; }
+
       .skills-category-desc {
         font-size: 11px;
         color: #666666;
         line-height: 1.6;
         min-height: 52px;
       }
+
       .skills-tags-list {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         margin-top: 8px;
       }
+
       .skill-tag-neon {
         font-family: 'JetBrains Mono', monospace;
         font-size: 9px;
@@ -1185,6 +1089,7 @@
         transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
         cursor: default;
       }
+
       .skills-category-card.cyan-accent .skill-tag-neon:hover {
         transform: translateY(-2px) scale(1.04);
         color: #ffffff;
@@ -1192,6 +1097,7 @@
         box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
         background-color: rgba(0, 229, 255, 0.04);
       }
+
       .skills-category-card.purple-accent .skill-tag-neon:hover {
         transform: translateY(-2px) scale(1.04);
         color: #ffffff;
@@ -1202,11 +1108,10 @@
     </style>
   </head>
   <body>
-    <!-- Lightweight Interactive Background Canvas -->
     <canvas id="canvas-bg"></canvas>
 
     <div class="app-wrapper">
-      <!-- Top Navigation -->
+      <!-- Navigation -->
       <nav>
         <div class="nav-logo">
           H. Teklu <span>// Portfolio</span>
@@ -1216,7 +1121,7 @@
           <li><a href="#credentials">Credentials</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#track-record">Track Record</a></li>
-          <li><a href="#metrics">Honest Numbers</a></li>
+          <li><a href="#metrics">Numbers</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
             <a href="mailto:hiyabteklu1@gmail.com" class="btn-terminal" id="cv-btn">
@@ -1226,7 +1131,7 @@
         </ul>
       </nav>
 
-      <!-- Hero Header Section -->
+      <!-- Hero -->
       <header class="hero-section">
         <span class="institution-tag">Haramaya University // Electrical & Computer Engineering</span>
         <h1 class="major-title">Hiyab Teklu</h1>
@@ -1235,7 +1140,7 @@
         </div>
       </header>
 
-      <!-- Biography Section -->
+      <!-- Biography -->
       <section id="bio" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
@@ -1245,55 +1150,53 @@
         </div>
         <div class="bio-grid">
           <div class="profile-image-container">
-            <!-- Custom Corner Geometric Indicators -->
             <div class="corner-line top-left"></div>
             <div class="corner-line top-right"></div>
             <div class="corner-line bottom-left"></div>
             <div class="corner-line bottom-right"></div>
             <img 
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" 
-              alt="Hiyab Teklu - Student Portrait" 
+              alt="Hiyab Teklu" 
               referrerpolicy="no-referrer"
             />
           </div>
           <div class="bio-content">
-            <h3>I'm a student at Haramaya University who loves making science easier to understand, double-checking math sheets, and building free study networks.</h3>
+            <h3>ECE student at Haramaya University. I check math solutions, organize study resources, and run two student Telegram channels.</h3>
             <p class="bio-text">
-              I study Electrical and Computer Engineering. To be completely honest, I am not trying to sound like a genius or make things sound more complicated than they are. I just really enjoy solving tricky physics equations, learning about circuit designs, and writing down clearly how things work so other students don't have to struggle. I organize two major student Telegram communities: <a href="https://t.me/QesemAcademy" target="_blank" class="bio-inline-link">Qesem Academy</a> and <a href="https://t.me/wisdom_tower1" target="_blank" class="bio-inline-link purple">Wisdom Tower Network</a>, where we share double-checked STEM notes, textbooks, and past exams with over 120,000 students. For me, education should be simple, free, and accessible to anyone who wants to learn.
+              I study Electrical and Computer Engineering. Outside of coursework, I run two Telegram channels — <a href="https://t.me/QesemAcademy" target="_blank" class="bio-inline-link">Qesem Academy</a> and <a href="https://t.me/wisdom_tower1" target="_blank" class="bio-inline-link purple">Wisdom Tower Network</a> — where students share textbooks, past exams, and study notes. Between both channels there are over 120,000 members. I go through math and physics problems by hand before posting answer keys, and I keep the folders organized so students don't have to dig around. Everything is free.
             </p>
             <div class="bio-stats">
               <div class="stat-item">
-                <span class="stat-label">My College</span>
+                <span class="stat-label">University</span>
                 <span class="stat-value">Haramaya University</span>
               </div>
               <div class="stat-item">
                 <span class="stat-label">Daily Work</span>
-                <span class="stat-value">Solving Math, Writing Guides, Sharing Resources</span>
+                <span class="stat-value">Math checking, writing guides, sharing resources</span>
               </div>
             </div>
 
-            <!-- Core Philosophy inspired by Mulu Luna Tsega's Portfolio layouts -->
             <div style="margin-top: 40px; border-top: 1px dashed #1a1a1a; padding-top: 32px;">
-              <h4 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2px; margin-bottom: 24px;">// HOW I WORK & LEARN</h4>
+              <h4 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2px; margin-bottom: 24px;">// How I Work</h4>
               
               <div style="border-left: 2px solid rgba(0, 229, 255, 0.25); padding-left: 16px; margin-bottom: 24px;">
-                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">Double-Checking Every Problem</h5>
+                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">I check everything by hand</h5>
                 <p style="font-size: 11px; color: #666666; line-height: 1.6;">
-                  I've personally solved more than 3,000 physics, calculus, and electric network assignments. I check every single derivation by hand because I know high schoolers and classmates are relying on them to study for high-stakes tests.
+                  I've worked through more than 3,000 physics, calculus, and circuit problems myself before they go on the channels. Students use these to study for national exams, so the answers need to be right.
                 </p>
               </div>
 
               <div style="border-left: 2px solid rgba(179, 0, 255, 0.25); padding-left: 16px; margin-bottom: 24px;">
-                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">Sharing Every Guide and File</h5>
+                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">I keep files organized and free</h5>
                 <p style="font-size: 11px; color: #666666; line-height: 1.6;">
-                  I clean-sorted more than 10,000 textbooks and review packages into simple, accessible directories on my Telegram channels. I believe that finding things to study shouldn't be an obstacle or a search headache for students in Ethiopia.
+                  I've sorted over 10,000 textbooks, past exams, and review sheets into folders students can actually browse. No login, no payment, no hunting around for links.
                 </p>
               </div>
 
               <div style="border-left: 2px solid rgba(0, 229, 255, 0.25); padding-left: 16px;">
-                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">No Fancy Jargon, Just Clarity</h5>
+                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">I write plainly</h5>
                 <p style="font-size: 11px; color: #666666; line-height: 1.6;">
-                  I hate when academic books make easy concepts sound incredibly dry and verbose just to look official. When I write guide sheets or design circuit diagrams, I write them simply so anyone can understand them on their first try.
+                  When I write a guide or explain a circuit, I write it the way I'd explain it to a classmate. Short sentences, clear steps, no unnecessary jargon.
                 </p>
               </div>
             </div>
@@ -1301,7 +1204,7 @@
         </div>
       </section>
 
-      <!-- Credentials & Awards Section -->
+      <!-- Credentials -->
       <section id="credentials" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
@@ -1310,30 +1213,27 @@
           </div>
         </div>
 
-        <!-- Awards Block -->
-        <h3 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2px; margin-bottom: 24px;">// RECOGNITION & COMPETITIONS</h3>
+        <h3 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2px; margin-bottom: 24px;">// Competitions & Recognition</h3>
         <div class="awards-panel">
           <div class="award-ribbon">
-            <span class="award-rank">TOP 10 Placement</span>
-            <h4 class="award-title">Austrian Embassy Essays</h4>
+            <span class="award-rank">Top 10 Nationally</span>
+            <h4 class="award-title">Austrian Embassy Essay</h4>
             <p class="award-desc">
-              I wrote an educational paper looking at how off-grid communities can build cheap, local solar energy grids and access sustainable textbook nodes. It ended up placing in the top 10 nationwide out of hundreds of student submissions.
+              I submitted a paper on how off-grid communities can build low-cost local solar grids. It placed in the top 10 out of hundreds of student submissions across the country.
             </p>
           </div>
           <div class="award-ribbon">
-            <span class="award-rank">TOP 5 Laureate // 2025</span>
+            <span class="award-rank">Top 5 — Bybit Africa 2025</span>
             <h4 class="award-title">Bybit Africa Visionary</h4>
             <p class="award-desc">
-              I was selected as one of the top five outstanding participants out of thousands of African tech applicants. Instead of pitching speculative tokens, I designs a simple peer-to-peer architecture for students to swap study guides completely free of charge.
+              Selected as one of five finalists out of thousands of applicants across Africa. My submission was a simple peer-to-peer system for students to share study materials with each other at no cost.
             </p>
           </div>
         </div>
 
-        <!-- Credentials Grid -->
-        <h3 style="font-size: 11px; text-transform: uppercase; color: #b300ff; letter-spacing: 2px; margin-bottom: 24px; margin-top: 24px;">// CERTIFIED SPECIALIZATIONS</h3>
+        <h3 style="font-size: 11px; text-transform: uppercase; color: #b300ff; letter-spacing: 2px; margin-bottom: 24px; margin-top: 24px;">// Courses & Certifications</h3>
         
         <div class="credentials-grid">
-          <!-- Haramaya -->
           <div class="credential-card">
             <div class="cred-header">
               <span class="cred-badge">ECE Student</span>
@@ -1341,32 +1241,29 @@
             </div>
             <h4 class="cred-title">Electrical & Computer Engineering</h4>
             <p class="cred-institution">Haramaya University</p>
-            <div class="cred-skills">My regular classes in physics, circuits, and engineering math</div>
+            <div class="cred-skills">Core coursework in physics, circuits, and engineering math</div>
           </div>
 
-          <!-- Harvard -->
           <div class="credential-card">
             <div class="cred-header">
               <span class="cred-badge">Online Course</span>
-              <span class="cred-period">2025 - 2026</span>
+              <span class="cred-period">2025 – 2026</span>
             </div>
             <h4 class="cred-title">Artificial Intelligence with Python</h4>
             <p class="cred-institution">Harvard Online</p>
-            <div class="cred-skills">I wanted to understand how AI search and logic search routes work in code</div>
+            <div class="cred-skills">How AI search and logic algorithms work in code</div>
           </div>
 
-          <!-- Technical University Munich -->
           <div class="credential-card">
             <div class="cred-header">
               <span class="cred-badge">Verified Course</span>
-              <span class="cred-period">Issued Jan 2026</span>
+              <span class="cred-period">January 2026</span>
             </div>
             <h4 class="cred-title">Digitalization in Aerospace Industry</h4>
             <p class="cred-institution">Technical University of Munich (TUM)</p>
-            <div class="cred-skills">Learning active systems engineering and digital controls for flight systems</div>
+            <div class="cred-skills">Systems engineering and digital controls for flight systems</div>
           </div>
 
-          <!-- Cisco Academy -->
           <div class="credential-card">
             <div class="cred-header">
               <span class="cred-badge">Network Training</span>
@@ -1374,78 +1271,72 @@
             </div>
             <h4 class="cred-title">Network Addressing & Troubleshooting</h4>
             <p class="cred-institution">Cisco Networking Academy</p>
-            <div class="cred-skills">Getting my hands dirty with physical IP routers and tracking packets</div>
+            <div class="cred-skills">IP routing, packet tracing, and physical network setup</div>
           </div>
 
-          <!-- Google -->
           <div class="credential-card">
             <div class="cred-header">
               <span class="cred-badge">ML Fundamentals</span>
-              <span class="cred-period">Verified Cert</span>
+              <span class="cred-period">Verified</span>
             </div>
             <h4 class="cred-title">Automated Machine Learning</h4>
             <p class="cred-institution">Google pour les pros</p>
-            <div class="cred-skills">Studying automated models and how Google handles machine learning flows</div>
+            <div class="cred-skills">Automated models and how Google structures ML workflows</div>
           </div>
 
-          <!-- Technical Writing -->
           <div class="credential-card">
             <div class="cred-header">
               <span class="cred-badge">Writing Methods</span>
               <span class="cred-period">Academic Study</span>
             </div>
-            <h4 class="cred-title">Technical Writing Mastery</h4>
-            <p class="cred-institution">Udemy Academy</p>
-            <div class="cred-skills">Learning how to write clearly, structure notes, and make documents clean</div>
+            <h4 class="cred-title">Technical Writing</h4>
+            <p class="cred-institution">Udemy</p>
+            <div class="cred-skills">Writing clearly, structuring notes, and formatting documents</div>
           </div>
 
-          <!-- CTO & Systems -->
           <div class="credential-card">
             <div class="cred-header">
-              <span class="cred-badge">Tech Coordination</span>
+              <span class="cred-badge">Tech Management</span>
               <span class="cred-period">Self-Study</span>
             </div>
-            <h4 class="cred-title">Chief Technology Officer (CTO) Program</h4>
+            <h4 class="cred-title">CTO Program</h4>
             <p class="cred-institution">Udemy Engineering Programs</p>
-            <div class="cred-skills">Studying how engineering teams scale coordinate tech services safely</div>
+            <div class="cred-skills">How engineering teams coordinate and scale technical services</div>
           </div>
 
-          <!-- Renewable Energy -->
           <div class="credential-card">
             <div class="cred-header">
-              <span class="cred-badge">Global Development</span>
-              <span class="cred-period">Verified Study</span>
+              <span class="cred-badge">Energy</span>
+              <span class="cred-period">Verified</span>
             </div>
             <h4 class="cred-title">Green Investments & Renewable Energy</h4>
             <p class="cred-institution">Asian Development Bank Institute</p>
-            <div class="cred-skills">Learning solar grid setups and how local communities afford clean power</div>
+            <div class="cred-skills">Solar grid setups and how communities fund clean energy access</div>
           </div>
 
-          <!-- Tech Management -->
           <div class="credential-card">
             <div class="cred-header">
-              <span class="cred-badge">Product Workflows</span>
+              <span class="cred-badge">Product</span>
               <span class="cred-period">Course Certificate</span>
             </div>
             <h4 class="cred-title">Managing Technological Innovation</h4>
             <p class="cred-institution">UniAthena UK</p>
-            <div class="cred-skills">Studying how to turn creative ideas into real, helpful student tools</div>
+            <div class="cred-skills">Turning ideas into usable tools for students</div>
           </div>
 
-          <!-- Communication Clarity -->
           <div class="credential-card">
             <div class="cred-header">
-              <span class="cred-badge">Written Skills</span>
+              <span class="cred-badge">Communication</span>
               <span class="cred-period">HP Global</span>
             </div>
-            <h4 class="cred-title">Communication Clarity & Business Comms</h4>
+            <h4 class="cred-title">Communication & Business Writing</h4>
             <p class="cred-institution">HP LIFE / IBM Programs</p>
-            <div class="cred-skills">Learning how to explain technical bugs cleanly to non-engineers</div>
+            <div class="cred-skills">Explaining technical issues clearly to non-engineers</div>
           </div>
         </div>
       </section>
 
-      <!-- Section 03: Technical Skills -->
+      <!-- Skills -->
       <section id="skills" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
@@ -1455,18 +1346,17 @@
         </div>
         
         <p class="skills-intro">
-          I don't believe in just memorizing keywords or collecting academic badges to look fancy. But through my university classes and running study networks for over 120,000 peers, I've had to roll up my sleeves and actually learn how these scientific concepts and code engines work in practice. Here is what I regularly use.
+          Through university coursework and running study channels for over 120,000 students, I've had to actually use these skills — solving problems, writing guides, and building small tools. Here's what I work with regularly.
         </p>
 
         <div class="skills-categories-grid">
-          <!-- Category 1: Engineering & Physics -->
           <div class="skills-category-card cyan-accent">
             <div class="skills-category-icon-title">
               <span class="skills-category-title">Engineering & Physics</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(0, 229, 255, 0.65);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
             </div>
             <p class="skills-category-desc">
-              My engineering classwork at Haramaya University forces me to study physical signals, circuit layouts, and electromagnetics on a deep mathematical level.
+              My ECE coursework covers physical signals, circuit layouts, and electromagnetics — with a lot of math underneath each one.
             </p>
             <div class="skills-tags-list">
               <span class="skill-tag-neon">Electromagnetic Systems</span>
@@ -1478,33 +1368,31 @@
             </div>
           </div>
 
-          <!-- Category 2: Software & AI Logic -->
           <div class="skills-category-card purple-accent">
             <div class="skills-category-icon-title">
-              <span class="skills-category-title">Software & AI Logic</span>
+              <span class="skills-category-title">Software & AI</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(179, 0, 255, 0.65);"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             </div>
             <p class="skills-category-desc">
-              I love writing logic modules, automating tedious calculations, and designing systems that help solve complex equations or handle text data cleanly.
+              I write scripts to automate calculations and small tools to help organize and process text data.
             </p>
             <div class="skills-tags-list">
-              <span class="skill-tag-neon">Python Coding</span>
+              <span class="skill-tag-neon">Python</span>
               <span class="skill-tag-neon">Artificial Intelligence</span>
               <span class="skill-tag-neon">Machine Learning</span>
               <span class="skill-tag-neon">System Architecture</span>
-              <span class="skill-tag-neon">Graph Search Trees</span>
+              <span class="skill-tag-neon">Graph Search</span>
               <span class="skill-tag-neon">JavaScript</span>
             </div>
           </div>
 
-          <!-- Category 3: Web Craft & UI Design -->
           <div class="skills-category-card cyan-accent">
             <div class="skills-category-icon-title">
-              <span class="skills-category-title">Web Craft & UI Design</span>
+              <span class="skills-category-title">Web & UI</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(0, 229, 255, 0.65);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
             </div>
             <p class="skills-category-desc">
-              I believe educational interfaces should stay fast and eye-friendly. Implementing clean grids, lightweight loops, and rendering canvases is my design outlet.
+              Study interfaces need to load fast and be easy to read. I keep layouts simple and make sure they work on small screens.
             </p>
             <div class="skills-tags-list">
               <span class="skill-tag-neon">API Design</span>
@@ -1518,122 +1406,122 @@
         </div>
       </section>
 
-      <!-- Track Record / Work Experience Section (Inspired by Mulu Luna's Format) -->
+      <!-- Track Record -->
       <section id="track-record" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
             <span class="section-num">[04]</span>
-            <h2 class="section-title">Track Record // Where I've Served</h2>
+            <h2 class="section-title">Track Record</h2>
           </div>
         </div>
 
         <div class="track-record-list">
-          <!-- Role 1: Qesem Academy -->
+          <!-- Qesem Academy -->
           <div class="record-item">
             <div class="record-header">
               <div class="record-title-group">
                 <h3>Qesem Academy</h3>
                 <div class="record-role">Math & Physics Checker</div>
               </div>
-              <div class="record-period">High School Study App // 95k+ Telegram Members</div>
+              <div class="record-period">High School Study Channel // 95k+ Telegram Members</div>
             </div>
             <div class="narrative-grid">
               <div class="narrative-block">
-                <span class="narrative-label">The Challenge</span>
+                <span class="narrative-label">The Problem</span>
                 <p class="narrative-text">
-                  Ethiopian high school students were preparing for their national entrance exams, but many study aids online had typos, wrong equations, or rounding errors in their math charts. That is stressful when you are trying to study.
+                  Students studying for the national university entrance exam were using materials with errors in them — wrong equations, incorrect rounding, typos in answer keys. That's a real problem when you're relying on them to pass.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">My Decision</span>
+                <span class="narrative-label">What I Did</span>
                 <p class="narrative-text">
-                  I volunteered to screen the syllabus files. Out of over 3,000 chemistry, physics, and calculus assignment questions, I personally solved every single one by hand to make sure there weren't any mistakes in the calculations.
+                  I went through over 3,000 chemistry, physics, and calculus problems and worked out each one by hand to catch mistakes before students used them.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">The Tradeoff</span>
+                <span class="narrative-label">The Cost</span>
                 <p class="narrative-text">
-                  It took a huge amount of my free time and sat at my desk for weeks checking math sheets. It was tedious, but I knew if a high schooler gets a wrong answer key, they could fail their real test. I had to get it right.
+                  It took weeks of free time sitting at a desk going through worksheets. But a wrong answer key can cause someone to fail a high-stakes exam, so it had to be done carefully.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">What Changed</span>
+                <span class="narrative-label">Result</span>
                 <p class="narrative-text">
-                  We built a solid, trusted collection of step-by-step study guides. Our channel <a href="https://t.me/QesemAcademy" target="_blank" class="bio-inline-link">@QesemAcademy</a> grew to more than 95,000 students who rely on our homework keys and daily mock tests every day.
+                  We built a reliable set of step-by-step guides. <a href="https://t.me/QesemAcademy" target="_blank" class="bio-inline-link">@QesemAcademy</a> grew to over 95,000 students who use the answer keys and daily mock tests regularly.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Role 2: Wisdom Tower -->
+          <!-- Wisdom Tower -->
           <div class="record-item">
             <div class="record-header">
               <div class="record-title-group">
                 <h3>Wisdom Tower Network</h3>
-                <div class="record-role">Community Creator & Organizer</div>
+                <div class="record-role">Founder & Organizer</div>
               </div>
-              <div class="record-period">Free Student Resource Library // 25k+ Members</div>
+              <div class="record-period">Free Study Library // 25k+ Members</div>
             </div>
             <div class="narrative-grid">
               <div class="narrative-block">
-                <span class="narrative-label">The Challenge</span>
+                <span class="narrative-label">The Problem</span>
                 <p class="narrative-text">
-                  As engineering students, finding textbooks, past college exams, prep guides, and lab sheets in Ethiopia is incredibly hard. Everything was scattered across random, slow folders, old links, or kept in private flash drives.
+                  Finding engineering textbooks, past exams, and lab sheets in Ethiopia is genuinely difficult. Files were scattered across random links, private flash drives, or slow shared folders that were hard to navigate.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">My Decision</span>
+                <span class="narrative-label">What I Did</span>
                 <p class="narrative-text">
-                  I wanted to fix this. I spent weekends and holidays gathering and cataloging over 10,000 digital items (PDF books, past exam sheets, reference slides) and sorted them cleanly into 100+ organized folders.
+                  I spent weekends collecting and sorting over 10,000 items — PDF textbooks, past exam sheets, reference slides — into organized folders that are easy to browse.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">The Tradeoff</span>
+                <span class="narrative-label">The Cost</span>
                 <p class="narrative-text">
-                  I had to pay for the cloud storage myself and managed the community alone during midterms. I refused to put ads or charge students to unlock guides, keeping it quiet, free, and completely focused on learning.
+                  I paid for cloud storage myself and ran it alone during exam seasons. No ads, no payment walls — I wanted it to stay useful and not get cluttered with monetization.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">What Changed</span>
+                <span class="narrative-label">Result</span>
                 <p class="narrative-text">
-                  It completely took off! Our channel <a href="https://t.me/wisdom_tower1" target="_blank" class="bio-inline-link purple">@wisdom_tower1</a> now has over 25,000 active students and young researchers who help each other and share college files daily without barriers.
+                  <a href="https://t.me/wisdom_tower1" target="_blank" class="bio-inline-link purple">@wisdom_tower1</a> now has over 25,000 active members who share files and help each other daily.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Role 3: Science Communicator -->
+          <!-- Science Writing -->
           <div class="record-item">
             <div class="record-header">
               <div class="record-title-group">
-                <h3>Science Communication & Writing</h3>
+                <h3>Science Writing</h3>
                 <div class="record-role">Science Writer</div>
               </div>
-              <div class="record-period">Simplifying Complex College Blueprints</div>
+              <div class="record-period">Simplifying Technical Topics for Students</div>
             </div>
             <div class="narrative-grid">
               <div class="narrative-block">
-                <span class="narrative-label">The Challenge</span>
+                <span class="narrative-label">The Problem</span>
                 <p class="narrative-text">
-                  Most physics papers, aerospace control loops, and AI code guides are written in the most complicated and boring way possible. It scares away beginners who feel like they aren't smart enough to grasp the science.
+                  Most physics papers and technical guides are written in a way that makes beginners feel like they can't follow along, even when the underlying concept isn't that complicated.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">My Decision</span>
+                <span class="narrative-label">What I Did</span>
                 <p class="narrative-text">
-                  I started writing visual articles that break down difficult concepts (like how satellite circuits operate or how basic IP network routing works) into friendly, human-scale explanations with simple charts.
+                  I started writing shorter explanations — how satellite circuits work, how IP routing works — in plain language with simple diagrams that don't require a background to understand.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">The Tradeoff</span>
+                <span class="narrative-label">The Cost</span>
                 <p class="narrative-text">
-                  It meant spending hours refining basic explanations and drawing neat, understandable diagrams rather than just working on my own private code projects.
+                  Simplifying something accurately takes more time than just writing technical language. It's not faster to write short and clear — it's slower. But it's more useful.
                 </p>
               </div>
               <div class="narrative-block">
-                <span class="narrative-label">What Changed</span>
+                <span class="narrative-label">Result</span>
                 <p class="narrative-text">
-                  I proved that you don't need fancy terminology to explain engineering. Having students tell me they finally understand a complex topic without getting a headache is the most satisfying part of my work.
+                  Students have told me they finally understood a topic after reading one of my guides. That feedback is what makes it worth the time.
                 </p>
               </div>
             </div>
@@ -1641,55 +1529,54 @@
         </div>
       </section>
 
-      <!-- Metrics and Impact Section -->
+      <!-- Metrics -->
       <section id="metrics" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
             <span class="section-num">[05]</span>
-            <h2 class="section-title">Honest Numbers & Impact</h2>
+            <h2 class="section-title">Numbers</h2>
           </div>
         </div>
         <div class="metrics-grid">
           <div class="metric-block">
             <span class="metric-num">3,000+</span>
-            <span class="metric-title">Math & Physics Checked</span>
-            <span class="metric-detail">Detailed physics, calculus, and circuit problems solved completely by hand to help students study accurately.</span>
+            <span class="metric-title">Problems Checked</span>
+            <span class="metric-detail">Physics, calculus, and circuit problems worked through by hand before being posted as study guides.</span>
           </div>
           <div class="metric-block">
             <span class="metric-num">95k+</span>
-            <span class="metric-title">Qesem Study Group</span>
-            <span class="metric-detail">High school candidates preparing for national exams on the main Qesem study channel daily.</span>
+            <span class="metric-title">Qesem Members</span>
+            <span class="metric-detail">High school students preparing for national exams on the main Qesem channel.</span>
           </div>
           <div class="metric-block">
             <span class="metric-num">25k+</span>
             <span class="metric-title">Wisdom Tower Members</span>
-            <span class="metric-detail">Students, classmates, and tech learners sharing guides and homework keys in our free open network.</span>
+            <span class="metric-detail">Students sharing guides, textbooks, and homework resources in the free open library.</span>
           </div>
           <div class="metric-block">
             <span class="metric-num">10k+</span>
-            <span class="metric-title">Study Resources Shared</span>
-            <span class="metric-detail">Textbooks, old exam booklets, lab guides, and notes organized into completely free public folders.</span>
+            <span class="metric-title">Resources Organized</span>
+            <span class="metric-detail">Textbooks, past exams, lab guides, and notes sorted into free public folders.</span>
           </div>
         </div>
 
-        <!-- Mulu style Honest Reflective blocks -->
         <div style="margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px dashed #1a1a1a; padding-top: 32px;">
           <div>
-            <h4 style="font-size: 11px; text-transform: uppercase; color: #b300ff; letter-spacing: 2.5px; margin-bottom: 12px;">// WHAT I INTENTIONALLY SACRIFICED</h4>
+            <h4 style="font-size: 11px; text-transform: uppercase; color: #b300ff; letter-spacing: 2.5px; margin-bottom: 12px;">// What I chose to give up</h4>
             <p style="font-size: 11px; color: #777777; line-height: 1.8;">
-              I chose to spend almost all my weekends manually cataloging thousands of textbooks, double-checking solutions, and formatting directories instead of just hanging out. People told me to use a fancier title than "student" on my profile, but honestly, doing real, helpful work for others matters much more to me than padded labels.
+              Most weekends went into cataloging textbooks and checking solutions instead of other things. I kept the channels free and turned down ways to monetize them. The work was useful, so I kept doing it.
             </p>
           </div>
           <div>
-            <h4 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2.5px; margin-bottom: 12px;">// A METRIC I DISTRUST</h4>
+            <h4 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2.5px; margin-bottom: 12px;">// A number I don't trust</h4>
             <p style="font-size: 11px; color: #777777; line-height: 1.8;">
-              Simple audience counters or database member rows. It is very easy to fake numbers online. The only thing I actually trust and care about is real engagement: like a high schooler sending me a message saying our physics guide helped them pass their exam.
+              Member counts. They're easy to inflate. The only feedback I trust is direct — a student saying a guide helped them pass their exam. That's the only metric that means anything to me.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Contact -->
       <section id="contact" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
@@ -1698,20 +1585,20 @@
           </div>
         </div>
         <div class="contact-banner">
-          <h3 class="contact-title">Let's Learn Together</h3>
+          <h3 class="contact-title">Say Hello</h3>
           <p class="contact-desc">
-            Whether you want to swap STEM study materials, work on some math/circuit problems together, or join our active student channels, you can find me directly through these links.
+            If you want to share study materials, work through a problem together, or just connect — find me through any of these.
           </p>
           <div class="contact-links" style="margin-bottom: 16px;">
-            <a href="https://t.me/QesemAcademy" target="_blank" class="contact-link-item">Qesem Academy Telegram</a>
-            <a href="https://t.me/wisdom_tower1" target="_blank" class="contact-link-item">Wisdom Tower Telegram</a>
-            <a href="https://t.me/hiyab_t" target="_blank" class="contact-link-item">My Telegram: @hiyab_t</a>
+            <a href="https://t.me/QesemAcademy" target="_blank" class="contact-link-item">Qesem Academy</a>
+            <a href="https://t.me/wisdom_tower1" target="_blank" class="contact-link-item">Wisdom Tower</a>
+            <a href="https://t.me/hiyab_t" target="_blank" class="contact-link-item">Telegram: @hiyab_t</a>
             <a href="mailto:hiyabteklu1@gmail.com" class="contact-link-item">hiyabteklu1@gmail.com</a>
-            <a href="https://www.linkedin.com/in/hiyabteklu" target="_blank" class="contact-link-item">LinkedIn Profile</a>
+            <a href="https://www.linkedin.com/in/hiyabteklu" target="_blank" class="contact-link-item">LinkedIn</a>
             <a href="tel:+251900763030" class="contact-link-item">+251 900 763030</a>
           </div>
           <a href="mailto:hiyabteklu1@gmail.com" class="btn-terminal cyan-accent">
-            Send Email Directly
+            Send an Email
           </a>
         </div>
       </section>
@@ -1720,18 +1607,17 @@
       <footer>
         <div class="footer-left">
           <span>&copy; 2026 Hiyab Teklu</span>
-          <span>// Student & STEM Educator</span>
+          <span>// ECE Student & STEM Educator</span>
         </div>
         <div>
-          <span>Bespoke Design System v3</span>
+          <span>Haramaya University</span>
         </div>
       </footer>
     </div>
 
-    <!-- Modal Window (V3 Institutional Aesthetic) -->
+    <!-- Modal -->
     <div id="project-modal" class="modal-overlay">
       <div class="modal-container">
-        <!-- Structural Corner Indicators -->
         <div class="modal-corners">
           <div class="corner-line top-left"></div>
           <div class="corner-line top-right"></div>
@@ -1739,23 +1625,23 @@
           <div class="corner-line bottom-right"></div>
         </div>
         <div class="modal-header">
-          <div class="modal-subtitle">// PROJECT INFO SHEET</div>
-          <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+          <div class="modal-subtitle">// Details</div>
+          <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>
         </div>
         <div class="modal-content">
           <div class="modal-img-wrapper">
-            <img id="modal-img" src="" alt="Project Visualizer" referrerpolicy="no-referrer">
+            <img id="modal-img" src="" alt="Project" referrerpolicy="no-referrer">
           </div>
           <div class="modal-info">
             <div class="modal-tag-row">
-              <span id="modal-tag" class="project-tag">STEM EDUCATION</span>
-              <span id="modal-index" class="project-index">01 // ID</span>
+              <span id="modal-tag" class="project-tag">STEM</span>
+              <span id="modal-index" class="project-index">01</span>
             </div>
-            <h2 id="modal-title" class="modal-title-text">INITIATIVE PORTAL</h2>
-            <p id="modal-desc" class="modal-desc-text">Synthesizing resources and educational modules...</p>
+            <h2 id="modal-title" class="modal-title-text">Title</h2>
+            <p id="modal-desc" class="modal-desc-text"></p>
             <div class="modal-action-row">
               <button class="btn-terminal cyan-accent" id="modal-action-btn" style="width: 100%;">
-                EXPLORE FULL ARCHIVE
+                Open Channel
               </button>
             </div>
           </div>
@@ -1763,9 +1649,8 @@
       </div>
     </div>
 
-    <!-- Vanilla Javascript Logic -->
     <script>
-      // 1. Dynamic Typewriter Effect for Hero Header subtitle
+      // Typewriter
       const subtitleText = "Engineering Student | Applied Scientist | STEM Educator";
       const typewriterElement = document.getElementById("typewriter");
       let characterIndex = 0;
@@ -1774,42 +1659,31 @@
         if (characterIndex < subtitleText.length) {
           typewriterElement.textContent += subtitleText.charAt(characterIndex);
           characterIndex++;
-          setTimeout(runTypewriter, 50 + Math.random() * 40); // natural rhythm variation
+          setTimeout(runTypewriter, 50 + Math.random() * 40);
         }
       }
 
-      // Delay start of typewriter slightly for clean page enter
       window.addEventListener("DOMContentLoaded", () => {
         setTimeout(runTypewriter, 600);
       });
 
-      // 2. Interactive Background Canvas Particle Network
+      // Canvas Background
       const canvas = document.getElementById("canvas-bg");
       const ctx = canvas.getContext("2d");
       
       let width = (canvas.width = window.innerWidth);
       let height = (canvas.height = window.innerHeight);
-
       let particles = [];
-      const particleCount = Math.min(65, Math.floor((width * height) / 25000)); // scale particles density to viewport size
+      const particleCount = Math.min(65, Math.floor((width * height) / 25000));
       let mouse = { x: null, y: null, activeRadius: 180 };
 
-      // Re-evaluate canvas boundaries on resize
       window.addEventListener("resize", () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
       });
 
-      // Capture cursor coordinates
-      window.addEventListener("mousemove", (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-      });
-
-      window.addEventListener("mouseleave", () => {
-        mouse.x = null;
-        mouse.y = null;
-      });
+      window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+      window.addEventListener("mouseleave", () => { mouse.x = null; mouse.y = null; });
 
       class Particle {
         constructor() {
@@ -1818,28 +1692,23 @@
           this.vx = (Math.random() - 0.5) * 0.4;
           this.vy = (Math.random() - 0.5) * 0.4;
           this.radius = Math.random() * 1.5 + 0.5;
-          // Determine alternating sparse colors (cyan or purple)
           this.color = Math.random() > 0.65 ? "rgba(0, 229, 255, 0.4)" : "rgba(179, 0, 255, 0.4)";
         }
 
         update() {
           this.x += this.vx;
           this.y += this.vy;
-
-          // Wall bouncing
           if (this.x < 0 || this.x > width) this.vx *= -1;
           if (this.y < 0 || this.y > height) this.vy *= -1;
-
-          // Dynamic hover interaction: pull or repel points subtly based on distance to cursor
           if (mouse.x !== null && mouse.y !== null) {
             const dx = mouse.x - this.x;
             const dy = mouse.y - this.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-             if (dist < mouse.activeRadius) {
-               const force = (mouse.activeRadius - dist) / mouse.activeRadius;
-               this.x -= dx * force * 0.02;
-               this.y -= dy * force * 0.02;
-             }
+            if (dist < mouse.activeRadius) {
+              const force = (mouse.activeRadius - dist) / mouse.activeRadius;
+              this.x -= dx * force * 0.02;
+              this.y -= dy * force * 0.02;
+            }
           }
         }
 
@@ -1851,26 +1720,19 @@
         }
       }
 
-      // Initialize dataset
       function initParticles() {
         particles = [];
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
-        }
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
       }
 
-      // Connectivity loop
       function handleParticles() {
         for (let i = 0; i < particles.length; i++) {
           particles[i].update();
           particles[i].draw();
-
-          // Search neighboring particles
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-
             if (distance < 155) {
               const alpha = (155 - distance) / 155;
               ctx.strokeStyle = `rgba(100, 100, 100, ${alpha * 0.13})`;
@@ -1893,27 +1755,20 @@
       initParticles();
       animate();
 
-      // 3. JS Advanced Intersection Observer to orchestrate scroll reveals
+      // Scroll reveals
       const revealElements = document.querySelectorAll(".reveal");
-      
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("revealed");
-            // Optionally unobserve after transition ends to optimize
             revealObserver.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-      });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-      revealElements.forEach((el) => {
-        revealObserver.observe(el);
-      });
+      revealElements.forEach((el) => revealObserver.observe(el));
 
-      // V3 Interactive Modal Handler
+      // Modal
       const modalOverlay = document.getElementById("project-modal");
       const modalImg = document.getElementById("modal-img");
       const modalTag = document.getElementById("modal-tag");
@@ -1923,7 +1778,6 @@
       const modalCloseBtn = document.getElementById("modal-close-btn");
       const modalActionBtn = document.getElementById("modal-action-btn");
 
-      // Visual Asset Mapping Key
       const visualMaps = {
         qesem: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800",
         wisdom: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800",
@@ -1936,40 +1790,35 @@
         default: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800"
       };
 
-      // 1. Clicks on Track Record Items
       document.querySelectorAll(".record-item").forEach((record, index) => {
         record.addEventListener("click", () => {
           const title = record.querySelector("h3").textContent;
           const role = record.querySelector(".record-role").textContent;
           const period = record.querySelector(".record-period").textContent;
 
-          // Pull narrative blocks and construct detailed explanation
-          let detailedNarrative = `MY ROLE: ${role}\nFOCUS: ${period}\n\n`;
+          let detail = `Role: ${role}\n${period}\n\n`;
           record.querySelectorAll(".narrative-block").forEach(block => {
             const label = block.querySelector(".narrative-label").textContent;
             const text = block.querySelector(".narrative-text").innerHTML.trim();
-            detailedNarrative += `${label.toUpperCase()}:\n${text}\n\n`;
+            detail += `${label}:\n${text}\n\n`;
           });
 
-          // Match image
           let matchedImg = visualMaps.default;
           if (title.toLowerCase().includes("qesem")) matchedImg = visualMaps.qesem;
           else if (title.toLowerCase().includes("wisdom")) matchedImg = visualMaps.wisdom;
           else if (title.toLowerCase().includes("science") || title.toLowerCase().includes("writing")) matchedImg = visualMaps.science;
 
-          // Populate modal
           modalImg.src = matchedImg;
           modalTag.textContent = role;
-          modalIndex.textContent = `TRACK RECORD // 0${index + 1}`;
+          modalIndex.textContent = `0${index + 1}`;
           modalTitle.textContent = title;
-          modalDesc.innerHTML = detailedNarrative.replace(/\n/g, "<br>");
+          modalDesc.innerHTML = detail.replace(/\n/g, "<br>");
 
           styleModalAccent(index % 2 === 0);
           openModal();
         });
       });
 
-      // 2. Clicks on Credentials Cards
       document.querySelectorAll(".credential-card").forEach((card, index) => {
         card.addEventListener("click", () => {
           const title = card.querySelector(".cred-title").textContent;
@@ -1978,51 +1827,43 @@
           const institution = card.querySelector(".cred-institution").textContent;
           const skills = card.querySelector(".cred-skills").textContent;
 
-          let detailedNarrative = `CREDENTIAL PROFILE\n\n`;
-          detailedNarrative += `INSTITUTION:\n${institution}\n\n`;
-          detailedNarrative += `SPECIALIZATION TITLE:\n${title}\n\n`;
-          detailedNarrative += `ACQUIRED CAPABILITIES & SUBJECTS:\n${skills}\n\n`;
-          detailedNarrative += `VERIFIED TERM: ${period}\n`;
+          let detail = `Institution: ${institution}\n\nCourse: ${title}\n\nWhat I studied: ${skills}\n\nVerified: ${period}`;
 
-          // Match image
           let matchedImg = visualMaps.default;
-          const lowerTitle = title.toLowerCase();
-          if (lowerTitle.includes("electrical") || lowerTitle.includes("computer")) matchedImg = visualMaps.electrical;
-          else if (lowerTitle.includes("intelligence") || lowerTitle.includes("python")) matchedImg = visualMaps.intelligence;
-          else if (lowerTitle.includes("aerospace")) matchedImg = visualMaps.aerospace;
-          else if (lowerTitle.includes("network")) matchedImg = visualMaps.network;
-          else if (lowerTitle.includes("automated")) matchedImg = visualMaps.automated;
+          const lower = title.toLowerCase();
+          if (lower.includes("electrical") || lower.includes("computer")) matchedImg = visualMaps.electrical;
+          else if (lower.includes("intelligence") || lower.includes("python")) matchedImg = visualMaps.intelligence;
+          else if (lower.includes("aerospace")) matchedImg = visualMaps.aerospace;
+          else if (lower.includes("network")) matchedImg = visualMaps.network;
+          else if (lower.includes("automated")) matchedImg = visualMaps.automated;
 
-          // Populate modal
           modalImg.src = matchedImg;
           modalTag.textContent = badge;
-          modalIndex.textContent = `CREDENTIAL // REF-0${index + 1}`;
+          modalIndex.textContent = `REF-0${index + 1}`;
           modalTitle.textContent = title;
-          modalDesc.innerHTML = detailedNarrative.replace(/\n/g, "<br>");
+          modalDesc.innerHTML = detail.replace(/\n/g, "<br>");
 
           styleModalAccent(index % 2 !== 0);
           openModal();
         });
       });
 
-      function styleModalAccent(usePurpleAccent) {
+      function styleModalAccent(usePurple) {
         const container = modalOverlay.querySelector(".modal-container");
-        if (usePurpleAccent) {
+        if (usePurple) {
           container.style.borderColor = "rgba(179, 0, 255, 0.45)";
           container.style.boxShadow = "0 0 35px rgba(179, 0, 255, 0.15)";
-          modalTag.className = "project-tag";
           modalTag.style.borderColor = "rgba(179, 0, 255, 0.4)";
           modalTag.style.color = "rgba(179, 0, 255, 0.9)";
           modalActionBtn.className = "btn-terminal";
-          modalActionBtn.textContent = "EXPLORE OPEN RESOURCE CHANNEL";
+          modalActionBtn.textContent = "Open Resource Channel";
         } else {
           container.style.borderColor = "rgba(0, 229, 255, 0.45)";
           container.style.boxShadow = "0 0 35px rgba(0, 229, 255, 0.15)";
-          modalTag.className = "project-tag";
           modalTag.style.borderColor = "rgba(0, 229, 255, 0.4)";
           modalTag.style.color = "rgba(0, 229, 255, 0.9)";
           modalActionBtn.className = "btn-terminal cyan-accent";
-          modalActionBtn.textContent = "VIEW FULL PORTFOLIO ENTRY";
+          modalActionBtn.textContent = "View Full Entry";
         }
       }
 
@@ -2033,23 +1874,12 @@
 
       function closeModal() {
         modalOverlay.classList.remove("active");
-        document.body.style.overflow = ""; // Enable normal page scrolling
+        document.body.style.overflow = "";
       }
 
-      // Action listener for closing trigger elements
       modalCloseBtn.addEventListener("click", closeModal);
-      modalOverlay.addEventListener("click", (e) => {
-        if (e.target === modalOverlay) {
-          closeModal();
-        }
-      });
-
-      // Escape key event for accessible navigation closure
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
-          closeModal();
-        }
-      });
+      modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeModal(); });
+      window.addEventListener("keydown", (e) => { if (e.key === "Escape" && modalOverlay.classList.contains("active")) closeModal(); });
     </script>
   </body>
-  </html>
+</html>
