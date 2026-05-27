@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hiyab Teklu | Deep Tech Architect Portfolio</title>
+    <title>Hiyab Teklu | Engineering Portfolio & STEM Educator</title>
     <!-- Font Pairing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +95,7 @@
       .nav-logo span {
         color: #555555;
         font-weight: 300;
-      }
+        }
 
       .nav-links {
         display: flex;
@@ -245,7 +245,7 @@
 
       /* Right absolute info terminal on Hero */
       header.hero-section::after {
-        content: "Architecture v3.0 // Stable\nLAT: 9.4173 | LON: 42.0315\nAuth: Institutional Grade";
+        content: "STUDENT RECORD // PROTOTYPE\nHARAMAYA UNIVERSITY\nLAT: 9.4173 | LON: 42.0315";
         white-space: pre-line;
         position: absolute;
         right: 0;
@@ -609,6 +609,63 @@
         transform: translateY(0);
       }
 
+      /* Metrics Section Styling */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 20px;
+      }
+      .metric-block {
+        border-left: 2px solid rgba(0, 229, 255, 0.25);
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transition: border-color 0.3s ease;
+      }
+      .metric-block:hover {
+        border-color: #b300ff;
+      }
+      .metric-block:nth-child(even) {
+        border-left-color: rgba(179, 0, 255, 0.25);
+      }
+      .metric-block:nth-child(even):hover {
+        border-color: #00e5ff;
+      }
+      .metric-num {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -1px;
+      }
+      .metric-title {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #00e5ff;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+      }
+      .metric-block:nth-child(even) .metric-title {
+        color: #b300ff;
+      }
+      .metric-detail {
+        font-size: 11px;
+        color: #888888;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .metrics-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* Responsive Rules */
       @media (max-width: 900px) {
         header.hero-section {
@@ -807,6 +864,341 @@
           height: 220px;
         }
       }
+
+      /* Custom Simple & High-Contrast Student Link Styling */
+      .bio-inline-link {
+        color: #00e5ff;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+        font-weight: 500;
+        transition: color 0.2s ease, text-shadow 0.2s ease;
+      }
+      .bio-inline-link:hover {
+        color: #ffffff;
+        text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+      }
+      .bio-inline-link.purple {
+        color: #b300ff;
+      }
+      .bio-inline-link.purple:hover {
+        color: #ffffff;
+        text-shadow: 0 0 8px rgba(179, 0, 255, 0.4);
+      }
+
+      /* Track Record Structural Layout (Inspired by Mulu Luna's Portfolio) */
+      .track-record-list {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 24px;
+      }
+      .record-item {
+        border: 1px solid #1a1a1a;
+        background-color: #080808;
+        padding: 32px;
+        position: relative;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .record-item:hover {
+        border-color: rgba(0, 229, 255, 0.35);
+        box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
+      }
+      .record-item:nth-child(even):hover {
+        border-color: rgba(179, 0, 255, 0.35);
+        box-shadow: 0 0 25px rgba(179, 0, 255, 0.08);
+      }
+      .record-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid #161616;
+        padding-bottom: 20px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .record-title-group h3 {
+        font-size: 1.3rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .record-role {
+        font-size: 11px;
+        color: #00e5ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+      .record-item:nth-child(even) .record-role {
+        color: #b300ff;
+      }
+      .record-period {
+        font-size: 11px;
+        color: #666666;
+        text-align: right;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .narrative-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 768px) {
+        .narrative-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .record-period {
+          text-align: left;
+        }
+      }
+      .narrative-block {
+        border-left: 1px solid #1a1a1a;
+        padding-left: 16px;
+      }
+      .narrative-label {
+        font-size: 9px;
+        text-transform: uppercase;
+        color: #00e5ff;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        margin-bottom: 6px;
+      }
+      .record-item:nth-child(even) .narrative-label {
+        color: #b300ff;
+      }
+      .narrative-text {
+        font-size: 11px;
+        color: #888888;
+        line-height: 1.7;
+      }
+
+      /* Credentials Section Stylings */
+      .credentials-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 900px) {
+        .credentials-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+      .credential-card {
+        border: 1px solid #111111;
+        background-color: #060606;
+        padding: 24px;
+        position: relative;
+        transition: border-color 0.3s ease;
+      }
+      .credential-card:hover {
+        border-color: rgba(179, 0, 255, 0.25);
+      }
+      .credential-card:nth-child(even):hover {
+        border-color: rgba(0, 229, 255, 0.25);
+      }
+      .cred-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .cred-badge {
+        font-size: 8px;
+        padding: 2px 6px;
+        background-color: rgba(0, 229, 255, 0.05);
+        border: 1px solid rgba(0, 229, 255, 0.2);
+        color: #00e5ff;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .credential-card:nth-child(even) .cred-badge {
+        background-color: rgba(179, 0, 255, 0.05);
+        border: 1px solid rgba(179, 0, 255, 0.2);
+        color: #b300ff;
+      }
+      .cred-period {
+        font-size: 9px;
+        color: #444444;
+      }
+      .cred-title {
+        font-size: 11px;
+        font-weight: 700;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .cred-institution {
+        font-size: 10px;
+        color: #888888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+      }
+      .cred-skills {
+        font-size: 9px;
+        color: #555555;
+        border-top: 1px dashed #141414;
+        padding-top: 10px;
+        text-transform: uppercase;
+      }
+
+      /* Award Ribbon Layout */
+      .awards-panel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+      @media (max-width: 768px) {
+        .awards-panel {
+          grid-template-columns: 1fr;
+        }
+      }
+      .award-ribbon {
+        border-left: 3px solid #b300ff;
+        background-color: #080808;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transition: border-color 0.3s ease;
+      }
+      .award-ribbon:nth-child(even) {
+        border-left-color: #00e5ff;
+      }
+      .award-ribbon:hover {
+        border-left-color: #00e5ff;
+      }
+      .award-ribbon:nth-child(even):hover {
+        border-left-color: #b300ff;
+      }
+      .award-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-transform: uppercase;
+      }
+      .award-rank {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #00e5ff;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .award-ribbon:nth-child(even) .award-rank {
+        color: #b300ff;
+      }
+      .award-desc {
+        font-size: 11px;
+        color: #777777;
+        line-height: 1.6;
+      }
+
+      /* Technical Skills Section CSS rules */
+      .skills-intro {
+        font-size: 13px;
+        color: #888888;
+        line-height: 1.8;
+        margin-bottom: 32px;
+        max-width: 800px;
+      }
+      .skills-categories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      @media (max-width: 992px) {
+        .skills-categories-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+      .skills-category-card {
+        background-color: #060606;
+        border: 1px solid #111111;
+        padding: 32px 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .skills-category-card.cyan-accent:hover {
+        border-color: rgba(0, 229, 255, 0.35);
+        box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
+      }
+      .skills-category-card.purple-accent:hover {
+        border-color: rgba(179, 0, 255, 0.35);
+        box-shadow: 0 0 25px rgba(179, 0, 255, 0.08);
+      }
+      .skills-category-icon-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #141414;
+        padding-bottom: 12px;
+        margin-bottom: 4px;
+      }
+      .skills-category-title {
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #ffffff;
+      }
+      .skills-category-card.cyan-accent .skills-category-title {
+        color: #00e5ff;
+      }
+      .skills-category-card.purple-accent .skills-category-title {
+        color: #b300ff;
+      }
+      .skills-category-desc {
+        font-size: 11px;
+        color: #666666;
+        line-height: 1.6;
+        min-height: 52px;
+      }
+      .skills-tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .skill-tag-neon {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        font-weight: 500;
+        color: #888888;
+        background-color: rgba(20, 20, 20, 0.5);
+        border: 1px solid #1a1a1a;
+        padding: 6px 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: default;
+      }
+      .skills-category-card.cyan-accent .skill-tag-neon:hover {
+        transform: translateY(-2px) scale(1.04);
+        color: #ffffff;
+        border-color: rgba(0, 229, 255, 0.8);
+        box-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+        background-color: rgba(0, 229, 255, 0.04);
+      }
+      .skills-category-card.purple-accent .skill-tag-neon:hover {
+        transform: translateY(-2px) scale(1.04);
+        color: #ffffff;
+        border-color: rgba(179, 0, 255, 0.8);
+        box-shadow: 0 0 12px rgba(179, 0, 255, 0.35);
+        background-color: rgba(179, 0, 255, 0.04);
+      }
     </style>
   </head>
   <body>
@@ -817,15 +1209,18 @@
       <!-- Top Navigation -->
       <nav>
         <div class="nav-logo">
-          H. Teklu <span>// Haramaya</span>
+          H. Teklu <span>// Portfolio</span>
         </div>
         <ul class="nav-links">
-          <li><a href="#bio">Biography</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#bio">Profile</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#track-record">Track Record</a></li>
+          <li><a href="#metrics">Honest Numbers</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href="#" class="btn-terminal" id="cv-btn">
-              Download_CV.sh
+            <a href="mailto:hiyabteklu1@gmail.com" class="btn-terminal" id="cv-btn">
+              GET_IN_TOUCH.sh
             </a>
           </li>
         </ul>
@@ -833,7 +1228,7 @@
 
       <!-- Hero Header Section -->
       <header class="hero-section">
-        <span class="institution-tag">Haramaya University // Ethiopia</span>
+        <span class="institution-tag">Haramaya University // Electrical & Computer Engineering</span>
         <h1 class="major-title">Hiyab Teklu</h1>
         <div class="subtitle-container">
           <span id="typewriter"></span><span class="cursor"></span>
@@ -845,7 +1240,7 @@
         <div class="section-header">
           <div class="section-title-wrap">
             <span class="section-num">[01]</span>
-            <h2 class="section-title">Institutional Biography</h2>
+            <h2 class="section-title">Academic Profile</h2>
           </div>
         </div>
         <div class="bio-grid">
@@ -857,125 +1252,439 @@
             <div class="corner-line bottom-right"></div>
             <img 
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" 
-              alt="Hiyab Teklu - Architect Portrait" 
+              alt="Hiyab Teklu - Student Portrait" 
               referrerpolicy="no-referrer"
             />
           </div>
           <div class="bio-content">
-            <h3>Specializing in artificial intelligence, electromagnetic systems, and high-scale community infrastructure.</h3>
+            <h3>I'm a student at Haramaya University who loves making science easier to understand, double-checking math sheets, and building free study networks.</h3>
             <p class="bio-text">
-              Hiyab Teklu is an executor and designer dedicated to developing technological sovereignty through rigorous engineering and execution. Operating within Haramaya University, his practice synthesizes high-fidelity systems research with performance-driven testing and architectural deployment. Focused on building high-scale structural integrations, his work establishes a bridge between sovereign scientific continuous models and impactful civic utilities.
+              I study Electrical and Computer Engineering. To be completely honest, I am not trying to sound like a genius or make things sound more complicated than they are. I just really enjoy solving tricky physics equations, learning about circuit designs, and writing down clearly how things work so other students don't have to struggle. I organize two major student Telegram communities: <a href="https://t.me/QesemAcademy" target="_blank" class="bio-inline-link">Qesem Academy</a> and <a href="https://t.me/wisdom_tower1" target="_blank" class="bio-inline-link purple">Wisdom Tower Network</a>, where we share double-checked STEM notes, textbooks, and past exams with over 120,000 students. For me, education should be simple, free, and accessible to anyone who wants to learn.
             </p>
             <div class="bio-stats">
               <div class="stat-item">
-                <span class="stat-label">Institution</span>
+                <span class="stat-label">My College</span>
                 <span class="stat-value">Haramaya University</span>
               </div>
               <div class="stat-item">
-                <span class="stat-label">Core Focus</span>
-                <span class="stat-value">AI, Electromagnetics, Scale Infrastructure</span>
+                <span class="stat-label">Daily Work</span>
+                <span class="stat-value">Solving Math, Writing Guides, Sharing Resources</span>
+              </div>
+            </div>
+
+            <!-- Core Philosophy inspired by Mulu Luna Tsega's Portfolio layouts -->
+            <div style="margin-top: 40px; border-top: 1px dashed #1a1a1a; padding-top: 32px;">
+              <h4 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2px; margin-bottom: 24px;">// HOW I WORK & LEARN</h4>
+              
+              <div style="border-left: 2px solid rgba(0, 229, 255, 0.25); padding-left: 16px; margin-bottom: 24px;">
+                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">Double-Checking Every Problem</h5>
+                <p style="font-size: 11px; color: #666666; line-height: 1.6;">
+                  I've personally solved more than 3,000 physics, calculus, and electric network assignments. I check every single derivation by hand because I know high schoolers and classmates are relying on them to study for high-stakes tests.
+                </p>
+              </div>
+
+              <div style="border-left: 2px solid rgba(179, 0, 255, 0.25); padding-left: 16px; margin-bottom: 24px;">
+                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">Sharing Every Guide and File</h5>
+                <p style="font-size: 11px; color: #666666; line-height: 1.6;">
+                  I clean-sorted more than 10,000 textbooks and review packages into simple, accessible directories on my Telegram channels. I believe that finding things to study shouldn't be an obstacle or a search headache for students in Ethiopia.
+                </p>
+              </div>
+
+              <div style="border-left: 2px solid rgba(0, 229, 255, 0.25); padding-left: 16px;">
+                <h5 style="font-size: 12px; color: #ffffff; text-transform: uppercase; margin-bottom: 6px;">No Fancy Jargon, Just Clarity</h5>
+                <p style="font-size: 11px; color: #666666; line-height: 1.6;">
+                  I hate when academic books make easy concepts sound incredibly dry and verbose just to look official. When I write guide sheets or design circuit diagrams, I write them simply so anyone can understand them on their first try.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="section-layout">
-        <div class="section-header reveal">
+      <!-- Credentials & Awards Section -->
+      <section id="credentials" class="section-layout reveal">
+        <div class="section-header">
           <div class="section-title-wrap">
             <span class="section-num">[02]</span>
-            <h2 class="section-title">Selected Technical Architecture</h2>
+            <h2 class="section-title">Education & Credentials</h2>
+          </div>
+        </div>
+
+        <!-- Awards Block -->
+        <h3 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2px; margin-bottom: 24px;">// RECOGNITION & COMPETITIONS</h3>
+        <div class="awards-panel">
+          <div class="award-ribbon">
+            <span class="award-rank">TOP 10 Placement</span>
+            <h4 class="award-title">Austrian Embassy Essays</h4>
+            <p class="award-desc">
+              I wrote an educational paper looking at how off-grid communities can build cheap, local solar energy grids and access sustainable textbook nodes. It ended up placing in the top 10 nationwide out of hundreds of student submissions.
+            </p>
+          </div>
+          <div class="award-ribbon">
+            <span class="award-rank">TOP 5 Laureate // 2025</span>
+            <h4 class="award-title">Bybit Africa Visionary</h4>
+            <p class="award-desc">
+              I was selected as one of the top five outstanding participants out of thousands of African tech applicants. Instead of pitching speculative tokens, I designs a simple peer-to-peer architecture for students to swap study guides completely free of charge.
+            </p>
+          </div>
+        </div>
+
+        <!-- Credentials Grid -->
+        <h3 style="font-size: 11px; text-transform: uppercase; color: #b300ff; letter-spacing: 2px; margin-bottom: 24px; margin-top: 24px;">// CERTIFIED SPECIALIZATIONS</h3>
+        
+        <div class="credentials-grid">
+          <!-- Haramaya -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">ECE Student</span>
+              <span class="cred-period">Ongoing</span>
+            </div>
+            <h4 class="cred-title">Electrical & Computer Engineering</h4>
+            <p class="cred-institution">Haramaya University</p>
+            <div class="cred-skills">My regular classes in physics, circuits, and engineering math</div>
+          </div>
+
+          <!-- Harvard -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Online Course</span>
+              <span class="cred-period">2025 - 2026</span>
+            </div>
+            <h4 class="cred-title">Artificial Intelligence with Python</h4>
+            <p class="cred-institution">Harvard Online</p>
+            <div class="cred-skills">I wanted to understand how AI search and logic search routes work in code</div>
+          </div>
+
+          <!-- Technical University Munich -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Verified Course</span>
+              <span class="cred-period">Issued Jan 2026</span>
+            </div>
+            <h4 class="cred-title">Digitalization in Aerospace Industry</h4>
+            <p class="cred-institution">Technical University of Munich (TUM)</p>
+            <div class="cred-skills">Learning active systems engineering and digital controls for flight systems</div>
+          </div>
+
+          <!-- Cisco Academy -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Network Training</span>
+              <span class="cred-period">Verified 2026</span>
+            </div>
+            <h4 class="cred-title">Network Addressing & Troubleshooting</h4>
+            <p class="cred-institution">Cisco Networking Academy</p>
+            <div class="cred-skills">Getting my hands dirty with physical IP routers and tracking packets</div>
+          </div>
+
+          <!-- Google -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">ML Fundamentals</span>
+              <span class="cred-period">Verified Cert</span>
+            </div>
+            <h4 class="cred-title">Automated Machine Learning</h4>
+            <p class="cred-institution">Google pour les pros</p>
+            <div class="cred-skills">Studying automated models and how Google handles machine learning flows</div>
+          </div>
+
+          <!-- Technical Writing -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Writing Methods</span>
+              <span class="cred-period">Academic Study</span>
+            </div>
+            <h4 class="cred-title">Technical Writing Mastery</h4>
+            <p class="cred-institution">Udemy Academy</p>
+            <div class="cred-skills">Learning how to write clearly, structure notes, and make documents clean</div>
+          </div>
+
+          <!-- CTO & Systems -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Tech Coordination</span>
+              <span class="cred-period">Self-Study</span>
+            </div>
+            <h4 class="cred-title">Chief Technology Officer (CTO) Program</h4>
+            <p class="cred-institution">Udemy Engineering Programs</p>
+            <div class="cred-skills">Studying how engineering teams scale coordinate tech services safely</div>
+          </div>
+
+          <!-- Renewable Energy -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Global Development</span>
+              <span class="cred-period">Verified Study</span>
+            </div>
+            <h4 class="cred-title">Green Investments & Renewable Energy</h4>
+            <p class="cred-institution">Asian Development Bank Institute</p>
+            <div class="cred-skills">Learning solar grid setups and how local communities afford clean power</div>
+          </div>
+
+          <!-- Tech Management -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Product Workflows</span>
+              <span class="cred-period">Course Certificate</span>
+            </div>
+            <h4 class="cred-title">Managing Technological Innovation</h4>
+            <p class="cred-institution">UniAthena UK</p>
+            <div class="cred-skills">Studying how to turn creative ideas into real, helpful student tools</div>
+          </div>
+
+          <!-- Communication Clarity -->
+          <div class="credential-card">
+            <div class="cred-header">
+              <span class="cred-badge">Written Skills</span>
+              <span class="cred-period">HP Global</span>
+            </div>
+            <h4 class="cred-title">Communication Clarity & Business Comms</h4>
+            <p class="cred-institution">HP LIFE / IBM Programs</p>
+            <div class="cred-skills">Learning how to explain technical bugs cleanly to non-engineers</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 03: Technical Skills -->
+      <section id="skills" class="section-layout reveal">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-num">[03]</span>
+            <h2 class="section-title">Technical Skills</h2>
           </div>
         </div>
         
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card reveal">
-            <div class="project-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=800" 
-                alt="Ethiopian telemetry and launcher launcher design" 
-                referrerpolicy="no-referrer"
-              />
+        <p class="skills-intro">
+          I don't believe in just memorizing keywords or collecting academic badges to look fancy. But through my university classes and running study networks for over 120,000 peers, I've had to roll up my sleeves and actually learn how these scientific concepts and code engines work in practice. Here is what I regularly use.
+        </p>
+
+        <div class="skills-categories-grid">
+          <!-- Category 1: Engineering & Physics -->
+          <div class="skills-category-card cyan-accent">
+            <div class="skills-category-icon-title">
+              <span class="skills-category-title">Engineering & Physics</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(0, 229, 255, 0.65);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
             </div>
-            <div class="project-meta">
-              <span class="project-tag">Satellite Dynamics</span>
-              <span class="project-index">01 // CODEBASE: ZERO-ONE</span>
-            </div>
-            <h3 class="project-title">Project Zero-One</h3>
-            <p class="project-desc">
-              Cinematic documentary architecture focusing on Ethiopian satellite telemetry and heavy-lift rocket launches. Integrating spatial systems modeling with telemetry telemetry acquisition protocols.
+            <p class="skills-category-desc">
+              My engineering classwork at Haramaya University forces me to study physical signals, circuit layouts, and electromagnetics on a deep mathematical level.
             </p>
-            <div class="project-link-indicator">
-              Inspect Architecture Code &rarr;
+            <div class="skills-tags-list">
+              <span class="skill-tag-neon">Electromagnetic Systems</span>
+              <span class="skill-tag-neon">Circuit Analysis</span>
+              <span class="skill-tag-neon">Signal Processing</span>
+              <span class="skill-tag-neon">Aerospace Dynamics</span>
+              <span class="skill-tag-neon">Network Routing & IP</span>
+              <span class="skill-tag-neon">Applied Physics</span>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="project-card reveal">
-            <div class="project-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800" 
-                alt="AI story simulation neural structure" 
-                referrerpolicy="no-referrer"
-              />
+          <!-- Category 2: Software & AI Logic -->
+          <div class="skills-category-card purple-accent">
+            <div class="skills-category-icon-title">
+              <span class="skills-category-title">Software & AI Logic</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(179, 0, 255, 0.65);"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             </div>
-            <div class="project-meta">
-              <span class="project-tag">Artificial Intelligence</span>
-              <span class="project-index">02 // BASE: EHUD AI</span>
-            </div>
-            <h3 class="project-title">Ehud AI Infrastructure</h3>
-            <p class="project-desc">
-              Technical partnership executing performance-based testing and high-fidelity AI-generated narrative generation networks. Translating models into persistent operational environments.
+            <p class="skills-category-desc">
+              I love writing logic modules, automating tedious calculations, and designing systems that help solve complex equations or handle text data cleanly.
             </p>
-            <div class="project-link-indicator">
-              Inspect Architecture Code &rarr;
+            <div class="skills-tags-list">
+              <span class="skill-tag-neon">Python Coding</span>
+              <span class="skill-tag-neon">Artificial Intelligence</span>
+              <span class="skill-tag-neon">Machine Learning</span>
+              <span class="skill-tag-neon">System Architecture</span>
+              <span class="skill-tag-neon">Graph Search Trees</span>
+              <span class="skill-tag-neon">JavaScript</span>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="project-card reveal">
-            <div class="project-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" 
-                alt="Tower grid structural framework" 
-                referrerpolicy="no-referrer"
-              />
+          <!-- Category 3: Web Craft & UI Design -->
+          <div class="skills-category-card cyan-accent">
+            <div class="skills-category-icon-title">
+              <span class="skills-category-title">Web Craft & UI Design</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(0, 229, 255, 0.65);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
             </div>
-            <div class="project-meta">
-              <span class="project-tag">Distribution Protocols</span>
-              <span class="project-index">03 // ID: WISDOM TOWER</span>
-            </div>
-            <h3 class="project-title">Wisdom Tower Network</h3>
-            <p class="project-desc">
-              Designed and scaled an institutional academic distribution network, successfully managing data streams for 22,000+ members via strategic API load distribution.
+            <p class="skills-category-desc">
+              I believe educational interfaces should stay fast and eye-friendly. Implementing clean grids, lightweight loops, and rendering canvases is my design outlet.
             </p>
-            <div class="project-link-indicator">
-              Inspect Architecture Code &rarr;
+            <div class="skills-tags-list">
+              <span class="skill-tag-neon">API Design</span>
+              <span class="skill-tag-neon">Canvas API</span>
+              <span class="skill-tag-neon">CSS Animations</span>
+              <span class="skill-tag-neon">Responsive Layouts</span>
+              <span class="skill-tag-neon">Front-End Performance</span>
+              <span class="skill-tag-neon">Interactive Graphics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Track Record / Work Experience Section (Inspired by Mulu Luna's Format) -->
+      <section id="track-record" class="section-layout reveal">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-num">[04]</span>
+            <h2 class="section-title">Track Record // Where I've Served</h2>
+          </div>
+        </div>
+
+        <div class="track-record-list">
+          <!-- Role 1: Qesem Academy -->
+          <div class="record-item">
+            <div class="record-header">
+              <div class="record-title-group">
+                <h3>Qesem Academy</h3>
+                <div class="record-role">Math & Physics Checker</div>
+              </div>
+              <div class="record-period">High School Study App // 95k+ Telegram Members</div>
+            </div>
+            <div class="narrative-grid">
+              <div class="narrative-block">
+                <span class="narrative-label">The Challenge</span>
+                <p class="narrative-text">
+                  Ethiopian high school students were preparing for their national entrance exams, but many study aids online had typos, wrong equations, or rounding errors in their math charts. That is stressful when you are trying to study.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">My Decision</span>
+                <p class="narrative-text">
+                  I volunteered to screen the syllabus files. Out of over 3,000 chemistry, physics, and calculus assignment questions, I personally solved every single one by hand to make sure there weren't any mistakes in the calculations.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">The Tradeoff</span>
+                <p class="narrative-text">
+                  It took a huge amount of my free time and sat at my desk for weeks checking math sheets. It was tedious, but I knew if a high schooler gets a wrong answer key, they could fail their real test. I had to get it right.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">What Changed</span>
+                <p class="narrative-text">
+                  We built a solid, trusted collection of step-by-step study guides. Our channel <a href="https://t.me/QesemAcademy" target="_blank" class="bio-inline-link">@QesemAcademy</a> grew to more than 95,000 students who rely on our homework keys and daily mock tests every day.
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- Project 4 -->
-          <div class="project-card reveal">
-            <div class="project-img-box">
-              <img 
-                src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=800" 
-                alt="Continuous grid abstract pattern" 
-                referrerpolicy="no-referrer"
-              />
+          <!-- Role 2: Wisdom Tower -->
+          <div class="record-item">
+            <div class="record-header">
+              <div class="record-title-group">
+                <h3>Wisdom Tower Network</h3>
+                <div class="record-role">Community Creator & Organizer</div>
+              </div>
+              <div class="record-period">Free Student Resource Library // 25k+ Members</div>
             </div>
-            <div class="project-meta">
-              <span class="project-tag">Economics & Systems</span>
-              <span class="project-index">04 // AWARD_ID: CONTINUITY</span>
+            <div class="narrative-grid">
+              <div class="narrative-block">
+                <span class="narrative-label">The Challenge</span>
+                <p class="narrative-text">
+                  As engineering students, finding textbooks, past college exams, prep guides, and lab sheets in Ethiopia is incredibly hard. Everything was scattered across random, slow folders, old links, or kept in private flash drives.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">My Decision</span>
+                <p class="narrative-text">
+                  I wanted to fix this. I spent weekends and holidays gathering and cataloging over 10,000 digital items (PDF books, past exam sheets, reference slides) and sorted them cleanly into 100+ organized folders.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">The Tradeoff</span>
+                <p class="narrative-text">
+                  I had to pay for the cloud storage myself and managed the community alone during midterms. I refused to put ads or charge students to unlock guides, keeping it quiet, free, and completely focused on learning.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">What Changed</span>
+                <p class="narrative-text">
+                  It completely took off! Our channel <a href="https://t.me/wisdom_tower1" target="_blank" class="bio-inline-link purple">@wisdom_tower1</a> now has over 25,000 active students and young researchers who help each other and share college files daily without barriers.
+                </p>
+              </div>
             </div>
-            <h3 class="project-title">From Currency to Continuity</h3>
-            <p class="project-desc">
-              Award-winning technical architecture focused on digital asset workflows. Honored with first place in the 2026 Austrian Embassy innovation competition.
+          </div>
+
+          <!-- Role 3: Science Communicator -->
+          <div class="record-item">
+            <div class="record-header">
+              <div class="record-title-group">
+                <h3>Science Communication & Writing</h3>
+                <div class="record-role">Science Writer</div>
+              </div>
+              <div class="record-period">Simplifying Complex College Blueprints</div>
+            </div>
+            <div class="narrative-grid">
+              <div class="narrative-block">
+                <span class="narrative-label">The Challenge</span>
+                <p class="narrative-text">
+                  Most physics papers, aerospace control loops, and AI code guides are written in the most complicated and boring way possible. It scares away beginners who feel like they aren't smart enough to grasp the science.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">My Decision</span>
+                <p class="narrative-text">
+                  I started writing visual articles that break down difficult concepts (like how satellite circuits operate or how basic IP network routing works) into friendly, human-scale explanations with simple charts.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">The Tradeoff</span>
+                <p class="narrative-text">
+                  It meant spending hours refining basic explanations and drawing neat, understandable diagrams rather than just working on my own private code projects.
+                </p>
+              </div>
+              <div class="narrative-block">
+                <span class="narrative-label">What Changed</span>
+                <p class="narrative-text">
+                  I proved that you don't need fancy terminology to explain engineering. Having students tell me they finally understand a complex topic without getting a headache is the most satisfying part of my work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metrics and Impact Section -->
+      <section id="metrics" class="section-layout reveal">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-num">[05]</span>
+            <h2 class="section-title">Honest Numbers & Impact</h2>
+          </div>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-block">
+            <span class="metric-num">3,000+</span>
+            <span class="metric-title">Math & Physics Checked</span>
+            <span class="metric-detail">Detailed physics, calculus, and circuit problems solved completely by hand to help students study accurately.</span>
+          </div>
+          <div class="metric-block">
+            <span class="metric-num">95k+</span>
+            <span class="metric-title">Qesem Study Group</span>
+            <span class="metric-detail">High school candidates preparing for national exams on the main Qesem study channel daily.</span>
+          </div>
+          <div class="metric-block">
+            <span class="metric-num">25k+</span>
+            <span class="metric-title">Wisdom Tower Members</span>
+            <span class="metric-detail">Students, classmates, and tech learners sharing guides and homework keys in our free open network.</span>
+          </div>
+          <div class="metric-block">
+            <span class="metric-num">10k+</span>
+            <span class="metric-title">Study Resources Shared</span>
+            <span class="metric-detail">Textbooks, old exam booklets, lab guides, and notes organized into completely free public folders.</span>
+          </div>
+        </div>
+
+        <!-- Mulu style Honest Reflective blocks -->
+        <div style="margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px dashed #1a1a1a; padding-top: 32px;">
+          <div>
+            <h4 style="font-size: 11px; text-transform: uppercase; color: #b300ff; letter-spacing: 2.5px; margin-bottom: 12px;">// WHAT I INTENTIONALLY SACRIFICED</h4>
+            <p style="font-size: 11px; color: #777777; line-height: 1.8;">
+              I chose to spend almost all my weekends manually cataloging thousands of textbooks, double-checking solutions, and formatting directories instead of just hanging out. People told me to use a fancier title than "student" on my profile, but honestly, doing real, helpful work for others matters much more to me than padded labels.
             </p>
-            <div class="project-link-indicator">
-              Inspect Architecture Code &rarr;
-            </div>
+          </div>
+          <div>
+            <h4 style="font-size: 11px; text-transform: uppercase; color: #00e5ff; letter-spacing: 2.5px; margin-bottom: 12px;">// A METRIC I DISTRUST</h4>
+            <p style="font-size: 11px; color: #777777; line-height: 1.8;">
+              Simple audience counters or database member rows. It is very easy to fake numbers online. The only thing I actually trust and care about is real engagement: like a high schooler sending me a message saying our physics guide helped them pass their exam.
+            </p>
           </div>
         </div>
       </section>
@@ -984,22 +1693,25 @@
       <section id="contact" class="section-layout reveal">
         <div class="section-header">
           <div class="section-title-wrap">
-            <span class="section-num">[03]</span>
-            <h2 class="section-title">Communications Channel</h2>
+            <span class="section-num">[06]</span>
+            <h2 class="section-title">Get In Touch</h2>
           </div>
         </div>
         <div class="contact-banner">
-          <h3 class="contact-title">Establish Operational Sync</h3>
+          <h3 class="contact-title">Let's Learn Together</h3>
           <p class="contact-desc">
-            Initiate connection for strategic collaborations regarding high-scale infrastructure developments, electromagnetic designs, or advanced intelligence nodes.
+            Whether you want to swap STEM study materials, work on some math/circuit problems together, or join our active student channels, you can find me directly through these links.
           </p>
-          <div class="contact-links">
+          <div class="contact-links" style="margin-bottom: 16px;">
+            <a href="https://t.me/QesemAcademy" target="_blank" class="contact-link-item">Qesem Academy Telegram</a>
+            <a href="https://t.me/wisdom_tower1" target="_blank" class="contact-link-item">Wisdom Tower Telegram</a>
+            <a href="https://t.me/hiyab_t" target="_blank" class="contact-link-item">My Telegram: @hiyab_t</a>
             <a href="mailto:hiyabteklu1@gmail.com" class="contact-link-item">hiyabteklu1@gmail.com</a>
-            <a href="#" class="contact-link-item">Haramaya, Ethiopia</a>
-            <a href="#" class="contact-link-item">Secure Terminal</a>
+            <a href="https://www.linkedin.com/in/hiyabteklu" target="_blank" class="contact-link-item">LinkedIn Profile</a>
+            <a href="tel:+251900763030" class="contact-link-item">+251 900 763030</a>
           </div>
-          <a href="#" class="btn-terminal purple-accent" style="margin-top: 16px;">
-            Initiate Contact Sync
+          <a href="mailto:hiyabteklu1@gmail.com" class="btn-terminal cyan-accent">
+            Send Email Directly
           </a>
         </div>
       </section>
@@ -1008,10 +1720,10 @@
       <footer>
         <div class="footer-left">
           <span>&copy; 2026 Hiyab Teklu</span>
-          <span>// Verified Engineering</span>
+          <span>// Student & STEM Educator</span>
         </div>
         <div>
-          <span>Architecture V3.0.0-Dynamic</span>
+          <span>Bespoke Design System v3</span>
         </div>
       </footer>
     </div>
@@ -1027,7 +1739,7 @@
           <div class="corner-line bottom-right"></div>
         </div>
         <div class="modal-header">
-          <div class="modal-subtitle">// ARCHITECTURAL INTEL NODE DETAILS</div>
+          <div class="modal-subtitle">// PROJECT INFO SHEET</div>
           <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
         </div>
         <div class="modal-content">
@@ -1036,14 +1748,14 @@
           </div>
           <div class="modal-info">
             <div class="modal-tag-row">
-              <span id="modal-tag" class="project-tag">SATELLITE DYNAMICS</span>
-              <span id="modal-index" class="project-index">01 // CODEBASE</span>
+              <span id="modal-tag" class="project-tag">STEM EDUCATION</span>
+              <span id="modal-index" class="project-index">01 // ID</span>
             </div>
-            <h2 id="modal-title" class="modal-title-text">PROJECT ZERO-ONE</h2>
-            <p id="modal-desc" class="modal-desc-text">Synthesizing spatial system models with high fidelity...</p>
+            <h2 id="modal-title" class="modal-title-text">INITIATIVE PORTAL</h2>
+            <p id="modal-desc" class="modal-desc-text">Synthesizing resources and educational modules...</p>
             <div class="modal-action-row">
               <button class="btn-terminal cyan-accent" id="modal-action-btn" style="width: 100%;">
-                EXECUTE NODE REPROSECURE
+                EXPLORE FULL ARCHIVE
               </button>
             </div>
           </div>
@@ -1054,7 +1766,7 @@
     <!-- Vanilla Javascript Logic -->
     <script>
       // 1. Dynamic Typewriter Effect for Hero Header subtitle
-      const subtitleText = "Deep Tech Architect | Techno-Visionary Executor";
+      const subtitleText = "Engineering Student | Applied Scientist | STEM Educator";
       const typewriterElement = document.getElementById("typewriter");
       let characterIndex = 0;
       
@@ -1211,50 +1923,113 @@
       const modalCloseBtn = document.getElementById("modal-close-btn");
       const modalActionBtn = document.getElementById("modal-action-btn");
 
-      document.querySelectorAll(".project-card").forEach(card => {
-        card.addEventListener("click", (e) => {
-          e.preventDefault();
-          
-          const imgUrl = card.querySelector(".project-img-box img").src;
-          const tagText = card.querySelector(".project-tag").textContent;
-          const indexText = card.querySelector(".project-index").textContent;
-          const titleText = card.querySelector(".project-title").textContent;
-          const descText = card.querySelector(".project-desc").textContent;
+      // Visual Asset Mapping Key
+      const visualMaps = {
+        qesem: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800",
+        wisdom: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800",
+        science: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800",
+        electrical: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=800",
+        intelligence: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=800",
+        aerospace: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800",
+        network: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800",
+        automated: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800",
+        default: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800"
+      };
 
-          // Populate modal fields
-          modalImg.src = imgUrl;
-          modalTag.textContent = tagText;
-          modalIndex.textContent = indexText;
-          modalTitle.textContent = titleText;
-          modalDesc.textContent = descText;
+      // 1. Clicks on Track Record Items
+      document.querySelectorAll(".record-item").forEach((record, index) => {
+        record.addEventListener("click", () => {
+          const title = record.querySelector("h3").textContent;
+          const role = record.querySelector(".record-role").textContent;
+          const period = record.querySelector(".record-period").textContent;
 
-          // Dynamic structural accent styling based on project sequence node type
-          const isEven = indexText.includes("02 //") || indexText.includes("04 //");
-          const container = modalOverlay.querySelector(".modal-container");
-          
-          if (isEven) {
-            container.style.borderColor = "rgba(179, 0, 255, 0.45)";
-            container.style.boxShadow = "0 0 35px rgba(179, 0, 255, 0.15)";
-            modalTag.className = "project-tag";
-            modalTag.style.borderColor = "rgba(179, 0, 255, 0.4)";
-            modalTag.style.color = "rgba(179, 0, 255, 0.9)";
-            modalActionBtn.className = "btn-terminal";
-            modalActionBtn.textContent = "EXECUTE EVEN INTEGRAL NODE";
-          } else {
-            container.style.borderColor = "rgba(0, 229, 255, 0.45)";
-            container.style.boxShadow = "0 0 35px rgba(0, 229, 255, 0.15)";
-            modalTag.className = "project-tag";
-            modalTag.style.borderColor = "rgba(0, 229, 255, 0.4)";
-            modalTag.style.color = "rgba(0, 229, 255, 0.9)";
-            modalActionBtn.className = "btn-terminal cyan-accent";
-            modalActionBtn.textContent = "EXECUTE ODD INTEGRAL NODE";
-          }
+          // Pull narrative blocks and construct detailed explanation
+          let detailedNarrative = `MY ROLE: ${role}\nFOCUS: ${period}\n\n`;
+          record.querySelectorAll(".narrative-block").forEach(block => {
+            const label = block.querySelector(".narrative-label").textContent;
+            const text = block.querySelector(".narrative-text").innerHTML.trim();
+            detailedNarrative += `${label.toUpperCase()}:\n${text}\n\n`;
+          });
 
-          // Open the modal container
-          modalOverlay.classList.add("active");
-          document.body.style.overflow = "hidden"; // Disable background wrapper scrolling
+          // Match image
+          let matchedImg = visualMaps.default;
+          if (title.toLowerCase().includes("qesem")) matchedImg = visualMaps.qesem;
+          else if (title.toLowerCase().includes("wisdom")) matchedImg = visualMaps.wisdom;
+          else if (title.toLowerCase().includes("science") || title.toLowerCase().includes("writing")) matchedImg = visualMaps.science;
+
+          // Populate modal
+          modalImg.src = matchedImg;
+          modalTag.textContent = role;
+          modalIndex.textContent = `TRACK RECORD // 0${index + 1}`;
+          modalTitle.textContent = title;
+          modalDesc.innerHTML = detailedNarrative.replace(/\n/g, "<br>");
+
+          styleModalAccent(index % 2 === 0);
+          openModal();
         });
       });
+
+      // 2. Clicks on Credentials Cards
+      document.querySelectorAll(".credential-card").forEach((card, index) => {
+        card.addEventListener("click", () => {
+          const title = card.querySelector(".cred-title").textContent;
+          const badge = card.querySelector(".cred-badge").textContent;
+          const period = card.querySelector(".cred-period").textContent;
+          const institution = card.querySelector(".cred-institution").textContent;
+          const skills = card.querySelector(".cred-skills").textContent;
+
+          let detailedNarrative = `CREDENTIAL PROFILE\n\n`;
+          detailedNarrative += `INSTITUTION:\n${institution}\n\n`;
+          detailedNarrative += `SPECIALIZATION TITLE:\n${title}\n\n`;
+          detailedNarrative += `ACQUIRED CAPABILITIES & SUBJECTS:\n${skills}\n\n`;
+          detailedNarrative += `VERIFIED TERM: ${period}\n`;
+
+          // Match image
+          let matchedImg = visualMaps.default;
+          const lowerTitle = title.toLowerCase();
+          if (lowerTitle.includes("electrical") || lowerTitle.includes("computer")) matchedImg = visualMaps.electrical;
+          else if (lowerTitle.includes("intelligence") || lowerTitle.includes("python")) matchedImg = visualMaps.intelligence;
+          else if (lowerTitle.includes("aerospace")) matchedImg = visualMaps.aerospace;
+          else if (lowerTitle.includes("network")) matchedImg = visualMaps.network;
+          else if (lowerTitle.includes("automated")) matchedImg = visualMaps.automated;
+
+          // Populate modal
+          modalImg.src = matchedImg;
+          modalTag.textContent = badge;
+          modalIndex.textContent = `CREDENTIAL // REF-0${index + 1}`;
+          modalTitle.textContent = title;
+          modalDesc.innerHTML = detailedNarrative.replace(/\n/g, "<br>");
+
+          styleModalAccent(index % 2 !== 0);
+          openModal();
+        });
+      });
+
+      function styleModalAccent(usePurpleAccent) {
+        const container = modalOverlay.querySelector(".modal-container");
+        if (usePurpleAccent) {
+          container.style.borderColor = "rgba(179, 0, 255, 0.45)";
+          container.style.boxShadow = "0 0 35px rgba(179, 0, 255, 0.15)";
+          modalTag.className = "project-tag";
+          modalTag.style.borderColor = "rgba(179, 0, 255, 0.4)";
+          modalTag.style.color = "rgba(179, 0, 255, 0.9)";
+          modalActionBtn.className = "btn-terminal";
+          modalActionBtn.textContent = "EXPLORE OPEN RESOURCE CHANNEL";
+        } else {
+          container.style.borderColor = "rgba(0, 229, 255, 0.45)";
+          container.style.boxShadow = "0 0 35px rgba(0, 229, 255, 0.15)";
+          modalTag.className = "project-tag";
+          modalTag.style.borderColor = "rgba(0, 229, 255, 0.4)";
+          modalTag.style.color = "rgba(0, 229, 255, 0.9)";
+          modalActionBtn.className = "btn-terminal cyan-accent";
+          modalActionBtn.textContent = "VIEW FULL PORTFOLIO ENTRY";
+        }
+      }
+
+      function openModal() {
+        modalOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
 
       function closeModal() {
         modalOverlay.classList.remove("active");
@@ -1277,4 +2052,4 @@
       });
     </script>
   </body>
-</html>
+  </html>
