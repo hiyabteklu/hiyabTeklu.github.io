@@ -539,101 +539,6 @@
     .btn-cv-dl { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; background: var(--gold-dim); color: var(--gold); padding: 11px 16px; font-weight: 700; font-size: .76rem; text-decoration: none; text-transform: uppercase; letter-spacing: .08em; border: 1px solid rgba(212,184,74,.3); font-family: 'Outfit', sans-serif; transition: background .2s, border-color .2s, transform .25s; }
     .btn-cv-dl:hover { background: rgba(212,184,74,.18); border-color: var(--gold); transform: translateY(-2px); }
 
-    /* CONTACT ICON CARDS */
-    .contact-icon-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-bottom: 0; }
-    .c-icon-card {
-      display: flex; align-items: center; gap: 16px;
-      padding: 18px 20px; background: var(--surface);
-      border: 1px solid var(--border); text-decoration: none;
-      position: relative; overflow: hidden;
-      transition: border-color .3s, background .3s, transform .35s cubic-bezier(.16,1,.3,1);
-    }
-    .c-icon-card::before {
-      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
-      background: var(--gold); transform: scaleY(0); transform-origin: bottom;
-      transition: transform .35s cubic-bezier(.16,1,.3,1);
-    }
-    .c-icon-card:hover { border-color: var(--border-mid); background: var(--surface2); transform: translateY(-3px); }
-    .c-icon-card:hover::before { transform: scaleY(1); }
-    .c-icon-wrap {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--gold-dim); border: 1px solid rgba(212,184,74,.2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-      transition: background .3s, border-color .3s;
-    }
-    .c-icon-card:hover .c-icon-wrap { background: rgba(212,184,74,.18); border-color: var(--gold); }
-    .c-icon-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-    .c-icon-label { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text-muted); font-family: 'Outfit', sans-serif; }
-    .c-icon-val { font-size: .84rem; color: var(--text-secondary); font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .2s; }
-    .c-icon-card:hover .c-icon-val { color: var(--gold); }
-
-    /* TRACK RECORD CARDS */
-    .track-card {
-      background: var(--surface); border: 1px solid var(--border);
-      padding: 0; margin-bottom: 20px; position: relative; overflow: hidden;
-      transition: border-color .4s, box-shadow .4s;
-    }
-    .track-card:last-child { margin-bottom: 0; }
-    .track-card:hover { border-color: var(--border-mid); box-shadow: 0 16px 40px rgba(0,0,0,.45); }
-    .track-card-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 28px 32px; border-bottom: 1px solid var(--border);
-      cursor: pointer; transition: background .3s;
-      gap: 24px;
-    }
-    .track-card-header:hover { background: var(--surface2); }
-    .track-card-left { display: flex; align-items: center; gap: 18px; }
-    .track-card-icon {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--gold-dim); border: 1px solid rgba(212,184,74,.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; flex-shrink: 0;
-    }
-    .track-card-title-group { }
-    .track-card-org { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 3px; }
-    .track-card-role { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); font-family: 'Outfit', sans-serif; }
-    .track-card-right { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
-    .track-card-count { text-align: right; }
-    .track-card-num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.7rem; letter-spacing: -0.04em; color: var(--text-primary); line-height: 1; }
-    .track-card-num em { font-style: normal; color: var(--gold); }
-    .track-card-sub { font-size: .65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; }
-    .track-card-chevron { font-size: .9rem; color: var(--text-muted); transition: transform .35s cubic-bezier(.16,1,.3,1), color .2s; }
-    .track-card.open .track-card-chevron { transform: rotate(180deg); color: var(--gold); }
-    .track-card-body { display: none; padding: 28px 32px; }
-    .track-card.open .track-card-body { display: block; }
-    .track-card-narrative { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-bottom: 24px; }
-    .track-card-btn-row { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 20px; border-top: 1px solid var(--border); }
-
-    /* ABOUT CARDS */
-    .about-info-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-bottom: 20px; }
-    .about-info-card {
-      display: flex; align-items: center; gap: 12px;
-      background: var(--surface); border: 1px solid var(--border);
-      padding: 14px 16px;
-      transition: border-color .3s, background .3s;
-    }
-    .about-info-card:hover { border-color: var(--border-mid); background: var(--surface2); }
-    .aic-icon { font-size: 1rem; flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--gold-dim); border-radius: 50%; }
-    .aic-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-    .aic-label { font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--text-muted); font-family: 'Outfit', sans-serif; }
-    .aic-val { font-size: .82rem; color: var(--text-primary); font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .aic-val.green { color: var(--mint); font-weight: 600; }
-
-    /* STAGGERED PARAGRAPH REVEALS */
-    .fade-line { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
-    .fade-line.on { opacity: 1; transform: none; }
-
-    /* SPOTLIGHT GLOW ON CARDS */
-    .spotlight { position: relative; overflow: hidden; }
-    .spotlight-layer {
-      position: absolute; inset: 0; pointer-events: none; z-index: 0;
-      background: radial-gradient(300px circle at var(--mx,50%) var(--my,50%), rgba(212,184,74,0.07), transparent 65%);
-      opacity: 0; transition: opacity .4s;
-    }
-    .spotlight:hover .spotlight-layer { opacity: 1; }
-    .spotlight > *:not(.spotlight-layer) { position: relative; z-index: 1; }
-
     /* FOOTER */
     footer { padding: 36px 0; border-top: 1px solid var(--border); }
     .foot-inner { max-width: 1120px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); font-family: 'Outfit', sans-serif; font-weight: 500; }
@@ -645,15 +550,13 @@
       .hero-lower { grid-template-columns: 1fr; }
       .hero-stats { grid-template-columns: repeat(3,1fr); }
       .ap-grid { grid-template-columns: 1fr; }
-      .track-card-narrative { grid-template-columns: 1fr; gap: 14px; }
+      .track-narrative { grid-template-columns: 1fr; gap: 14px; }
       .c-grid { grid-template-columns: repeat(2,1fr); }
       .creds-featured { grid-template-columns: 1fr 1fr; }
       .creds-groups { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 44px; }
-      .about-photo { aspect-ratio: 3/4; max-width: 300px; margin: 0 auto; }
+      .about-photo { aspect-ratio: 4/3; max-width: 300px; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .contact-icon-grid { grid-template-columns: 1fr 1fr; }
-      .about-info-cards { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 680px) {
       .wrap { padding: 0 20px; }
@@ -668,15 +571,12 @@
       .cb { flex: 1 1 45%; }
       .work-item { grid-template-columns: 1fr auto; gap: 16px; }
       .w-n { display: none; }
+      .track-head { grid-template-columns: 1fr; }
+      .track-scale { text-align: left; }
       .contact-cta { padding: 36px 24px; }
       .foot-inner { flex-direction: column; gap: 10px; text-align: center; }
       .hero-body { padding: 60px 20px 48px; }
       .cv-btns { flex-direction: column; }
-      .contact-icon-grid { grid-template-columns: 1fr; }
-      .about-info-cards { grid-template-columns: 1fr; }
-      .track-card-header { flex-wrap: wrap; gap: 16px; }
-      .track-card-body { padding: 20px; }
-      .track-card-narrative { grid-template-columns: 1fr; }
     }
     @media (max-width: 460px) { .c-grid { grid-template-columns: 1fr; } .hero-stats { grid-template-columns: 1fr 1fr; } }
   </style>
@@ -739,7 +639,7 @@
       <div class="r d2">
         <div class="hero-tw-wrap"><span id="tw"></span><span class="tw-cur"></span></div>
         <p class="hero-stmt">
-          Most writers research what they write about. My starting point is different. <strong>I understand the subject, then find the clearest way to say it.</strong> I am an engineering student, technical writer, and AI filmmaker. Certified in multimodal communication (writing, graphics, and video) I deliver persuasive brand storytelling with uncompromising accuracy.
+          Most writers research what they write about. My starting point is different. <strong>I understand the subject, then find the clearest way to say it.</strong> Engineering student, competition-awarded storyteller, and content executor who operates where technical accuracy meets human language.
         </p>
         <div class="hero-btns">
           <a href="#work" class="btn-gold">See My Work ↓</a>
@@ -783,12 +683,12 @@
     <h2 class="stitle r">Work I <em>Take On</em></h2>
     <p class="sdesc r">Six disciplines. One standard: the work is accurate, delivered early, and doesn't need to be explained twice.</p>
     <div class="svc-grid">
-      <div class="svc-card spotlight r d1"><div class="spotlight-layer"></div><div class="shine"></div><div class="svc-ghost">01</div><div class="svc-icon">✍️</div><div class="svc-title">Technical Writing &amp; Documentation</div><div class="svc-desc">Engineering guides, product documentation, research papers, instructional materials. The accuracy comes from the engineering background. I don't approximate the subject, I understand it.</div><div class="svc-tag">Engineering · SaaS · EdTech</div></div>
-      <div class="svc-card spotlight r d2"><div class="spotlight-layer"></div><div class="shine"></div><div class="svc-ghost">02</div><div class="svc-icon">📢</div><div class="svc-title">Copywriting &amp; Brand Communication</div><div class="svc-desc">Website copy, product messaging, campaign writing. Informed by years of reading behavioral psychology to communicate in a way that actually lands with the right person, not just to fill a page.</div><div class="svc-tag">Startups · Tech Brands · Agencies</div></div>
-      <div class="svc-card spotlight r d3"><div class="spotlight-layer"></div><div class="shine"></div><div class="svc-ghost">03</div><div class="svc-icon">🎓</div><div class="svc-title">Educational Content Development</div><div class="svc-desc">Curriculum writing, course scripts, study guides, daily learning content. Done at scale across 120,000 students and multiple subjects. I know the difference between content that teaches and content that just fills a module.</div><div class="svc-tag">EdTech · Online Courses · Platforms</div></div>
-      <div class="svc-card spotlight r d1"><div class="spotlight-layer"></div><div class="shine"></div><div class="svc-ghost">04</div><div class="svc-icon">🎬</div><div class="svc-title">Video Scripting &amp; Editing</div><div class="svc-desc">Script to final cut. I produce short, highly accurate explainers and brand films for startups and companies. Give me the exact goal, and I handle the entire execution without needing to be managed. Narrative first, visuals second, every time.</div><div class="svc-tag">Brand Films · Explainers · Social</div></div>
-      <div class="svc-card spotlight r d2"><div class="spotlight-layer"></div><div class="shine"></div><div class="svc-ghost">05</div><div class="svc-icon">👁️</div><div class="svc-title">Brand Identity &amp; Graphic Design</div><div class="svc-desc">Visual identity, logo design, brand film production. Designed and delivered full brand identity for Born to Win Global Initiatives and received a formal Certificate of Award for capturing their vision in under two minutes.</div><div class="svc-tag">Startups · Nonprofits · Initiatives</div></div>
-      <div class="svc-card spotlight r d3"><div class="spotlight-layer"></div><div class="shine"></div><div class="svc-ghost">06</div><div class="svc-icon">🧠</div><div class="svc-title">Ghostwriting &amp; Persuasive Writing</div><div class="svc-desc">Essays, speeches, scripts, executive communication, brand narratives. Word selection is deliberate. Tone is calibrated. Clients get writing that sounds like the best version of them: mature, precise, unmistakably human.</div><div class="svc-tag">Executives · Founders · Academics</div></div>
+      <div class="svc-card r d1"><div class="shine"></div><div class="svc-ghost">01</div><div class="svc-icon">✍️</div><div class="svc-title">Technical Writing &amp; Documentation</div><div class="svc-desc">Engineering guides, product documentation, research papers, instructional materials. The accuracy comes from the engineering background. I don't approximate the subject, I understand it.</div><div class="svc-tag">Engineering · SaaS · EdTech</div></div>
+      <div class="svc-card r d2"><div class="shine"></div><div class="svc-ghost">02</div><div class="svc-icon">📢</div><div class="svc-title">Copywriting &amp; Brand Communication</div><div class="svc-desc">Website copy, product messaging, campaign writing. Informed by years of reading behavioral psychology to communicate in a way that actually lands with the right person, not just to fill a page.</div><div class="svc-tag">Startups · Tech Brands · Agencies</div></div>
+      <div class="svc-card r d3"><div class="shine"></div><div class="svc-ghost">03</div><div class="svc-icon">🎓</div><div class="svc-title">Educational Content Development</div><div class="svc-desc">Curriculum writing, course scripts, study guides, daily learning content. Done at scale across 120,000 students and multiple subjects. I know the difference between content that teaches and content that just fills a module.</div><div class="svc-tag">EdTech · Online Courses · Platforms</div></div>
+      <div class="svc-card r d1"><div class="shine"></div><div class="svc-ghost">04</div><div class="svc-icon">🎬</div><div class="svc-title">Video Scripting &amp; Editing</div><div class="svc-desc">Script to final cut. I wrote, narrated, and edited a video essay solo that placed Top 5 from thousands of entries across Kenya and Ethiopia. Narrative first, visuals second, every time.</div><div class="svc-tag">Brand Films · Explainers · Social</div></div>
+      <div class="svc-card r d2"><div class="shine"></div><div class="svc-ghost">05</div><div class="svc-icon">👁️</div><div class="svc-title">Brand Identity &amp; Graphic Design</div><div class="svc-desc">Visual identity, logo design, brand film production. Designed and delivered full brand identity for Born to Win Global Initiatives and received a formal Certificate of Award for capturing their vision in under two minutes.</div><div class="svc-tag">Startups · Nonprofits · Initiatives</div></div>
+      <div class="svc-card r d3"><div class="shine"></div><div class="svc-ghost">06</div><div class="svc-icon">🧠</div><div class="svc-title">Ghostwriting &amp; Persuasive Writing</div><div class="svc-desc">Essays, speeches, scripts, executive communication, brand narratives. Word selection is deliberate. Tone is calibrated. Clients get writing that sounds like the best version of them: mature, precise, unmistakably human.</div><div class="svc-tag">Executives · Founders · Academics</div></div>
     </div>
   </div>
 </section>
@@ -837,11 +737,10 @@
               <img src="images/ceo-telegram.jpg" alt="Award Post">
               Telegram — Award Post
             </div>
-            <div class="proof-btn" onclick="openLb('images/award2.jpg')">
-  <img src="images/award2.jpg" alt="LinkedIn Credit">
-  LinkedIn — Logo Credit
-</div>
-
+            <div class="proof-btn" onclick="openLb('images/linkedin-post.jpg')">
+              <img src="images/linkedin-post.jpg" alt="LinkedIn Credit">
+              LinkedIn — Logo Credit
+            </div>
           </div>
         </div>
         <div class="w-arrow">↗</div>
@@ -856,25 +755,25 @@
     <div class="eyebrow r"><span class="ey-n">03</span><span class="ey-l"></span></div>
     <h2 class="stitle r">How I <em>Work</em></h2>
     <div class="ap-grid" style="margin-top: 20px;">
-      <div class="ap-card spotlight r d1"><div class="spotlight-layer"></div>
+      <div class="ap-card r d1">
         <div class="ap-ghost">01</div>
         <div class="ap-n">Principle 01</div>
         <div class="ap-title">From the inside out</div>
         <div class="ap-text">I don't research a topic then write about it. I already understand the underlying system and the subject in hand. Writing becomes the last step, not the first struggle.</div>
       </div>
-      <div class="ap-card spotlight r d2"><div class="spotlight-layer"></div>
+      <div class="ap-card r d2">
         <div class="ap-ghost">02</div>
         <div class="ap-n">Principle 02</div>
         <div class="ap-title">Reverse engineering everything</div>
         <div class="ap-text">When something doesn't make sense, I don't move on. I take it apart until it does. It's less a method and more a compulsion. I'm genuinely uncomfortable leaving things half-understood.</div>
       </div>
-      <div class="ap-card spotlight r d3"><div class="spotlight-layer"></div>
+      <div class="ap-card r d3">
         <div class="ap-ghost">03</div>
         <div class="ap-n">Principle 03</div>
         <div class="ap-title">Psychological precision</div>
         <div class="ap-text">I've spent years reading behavioral psychology. How people absorb information, where attention breaks, what creates trust, what kills it. That reading shapes every structural and word-level decision I make. I know why each sentence is where it is.</div>
       </div>
-      <div class="ap-card spotlight r d4"><div class="spotlight-layer"></div>
+      <div class="ap-card r d4">
         <div class="ap-ghost">04</div>
         <div class="ap-n">Principle 04</div>
         <div class="ap-title">Zero margin for error</div>
@@ -891,99 +790,110 @@
     <h2 class="stitle r">Where I've <em>Worked</em></h2>
     <p class="sdesc r">Real roles. Real communities. Real accountability to students who were relying on the work being right.</p>
     <div class="r">
-
-      <div class="track-card open">
-        <div class="track-card-header" onclick="toggleTrack(this)">
-          <div class="track-card-left">
-            <div class="track-card-icon">📚</div>
-            <div class="track-card-title-group">
-              <div class="track-card-org">Qesem Academy</div>
-              <div class="track-card-role">Content Creator &amp; Science Communicator</div>
-            </div>
+      <div class="track-item">
+        <div class="track-head">
+          <div>
+            <div class="track-org">Qesem Academy</div>
+            <div class="track-role">Content Creator &amp; Science Communicator</div>
           </div>
-          <div class="track-card-right">
-            <div class="track-card-count">
-              <div class="track-card-num">95<em>k+</em></div>
-              <div class="track-card-sub">High school students</div>
-            </div>
-            <div class="track-card-chevron">▾</div>
+          <div class="track-scale">
+            <div class="track-big">95<em>k+</em></div>
+            <div class="track-sub">High school students</div>
           </div>
         </div>
-        <div class="track-card-body">
-          <div class="track-card-narrative">
-            <div class="track-block"><div class="track-lbl">The Situation</div><div class="track-txt">High school students often struggle to find reliable information and verified resources for national entrance exams, exposing them to scams and low-quality materials scattered across private groups.</div></div>
-            <div class="track-block"><div class="track-lbl">What I Did</div><div class="track-txt">I am a daily content creator at Qesem Academy and Qesem University. I solved over 3,000 entrance questions, prepared around 2,500 practice questions, and contributed more than 90% to their quiz app content.</div></div>
-            <div class="track-block"><div class="track-lbl">The Cost</div><div class="track-txt">A lot of sleepless nights during my own exam periods, with the responsibility of thousands of students relying on my content and leaving no room for shortcuts.</div></div>
-            <div class="track-block"><div class="track-lbl">What It Built</div><div class="track-txt">A trusted, verified archive of step-by-step guides and a quiz app with 99.8% accuracy. The channels <a href="https://t.me/QesemAcademy" target="_blank">@QesemAcademy</a> and <a href="https://t.me/Qesem_University" target="_blank">@Qesem_University</a> became daily study resources for over 95,000 students and counting.</div></div>
+        <div class="track-narrative">
+          <div class="track-block">
+            <div class="track-lbl">The Situation</div>
+            <div class="track-txt">High school students often struggle to find reliable information and verified resources for national entrance exams, exposing them to scams and low-quality materials scattered across private groups.</div>
           </div>
-          <div class="track-card-btn-row">
-            <a href="https://t.me/QesemAcademy" target="_blank" class="track-btn">✈️ Qesem Academy</a>
-            <a href="https://t.me/Qesem_University" target="_blank" class="track-btn">✈️ Qesem University</a>
-            <a href="https://play.google.com/store/apps/details?id=com.qesem.academy" target="_blank" class="track-btn">📱 Quiz App</a>
+          <div class="track-block">
+            <div class="track-lbl">What I Did</div>
+            <div class="track-txt">I am a daily content creator at Qesem Academy and Qesem University. I solved over 3,000 entrance questions, prepared around 2,500 practice questions, and contributed more than 90% to their quiz app content.</div>
           </div>
-        </div>
-      </div>
-
-      <div class="track-card">
-        <div class="track-card-header" onclick="toggleTrack(this)">
-          <div class="track-card-left">
-            <div class="track-card-icon">🏛️</div>
-            <div class="track-card-title-group">
-              <div class="track-card-org">Wisdom Tower Network</div>
-              <div class="track-card-role">Founder &amp; Community Organizer</div>
-            </div>
+          <div class="track-block">
+            <div class="track-lbl">The Cost</div>
+            <div class="track-txt">A lot of sleepless nights during my own exam periods, with the responsibility of thousands of students relying on my content and leaving no room for shortcuts.</div>
           </div>
-          <div class="track-card-right">
-            <div class="track-card-count">
-              <div class="track-card-num">25<em>k+</em></div>
-              <div class="track-card-sub">University students</div>
-            </div>
-            <div class="track-card-chevron">▾</div>
+          <div class="track-block">
+            <div class="track-lbl">What It Built</div>
+            <div class="track-txt">A trusted, verified archive of step-by-step guides and a quiz app with 99.8% accuracy. The channels <a href="https://t.me/QesemAcademy" target="_blank">@QesemAcademy</a> and <a href="https://t.me/Qesem_University" target="_blank">@Qesem_University</a> became daily study resources for over 95,000 students and counting.</div>
           </div>
         </div>
-        <div class="track-card-body">
-          <div class="track-card-narrative">
-            <div class="track-block"><div class="track-lbl">The Situation</div><div class="track-txt">As a university student in Ethiopia, finding resources, information, advice, guides, and opportunities is genuinely difficult. The only thing students can access is a rigid class schedule, with little connection to real-life learning needs.</div></div>
-            <div class="track-block"><div class="track-lbl">What I Did</div><div class="track-txt">Built and cataloged a free digital library from scratch. Gathered over 10,000 educational materials covering every course in Ethiopian higher education, plus time management tips, scholarships, and a space where students can find co-founders and access everything they need in one place.</div></div>
-            <div class="track-block"><div class="track-lbl">The Cost</div><div class="track-txt">I managed the entire community alone through my own midterms. I refused to run ads or charge access fees. The channel remained free and fully focused on learning.</div></div>
-            <div class="track-block"><div class="track-lbl">What It Built</div><div class="track-txt"><a href="https://t.me/wisdom_tower1" target="_blank">@wisdom_tower1</a> now has over 25,000 active students, researchers, and young innovators sharing materials and helping each other daily. No barriers, no cost, no ads. A trusted source and honest insight-sharing hub for thousands.</div></div>
-          </div>
-          <div class="track-card-btn-row">
-            <a href="https://t.me/wisdom_tower1" target="_blank" class="track-btn">✈️ Wisdom Tower</a>
-          </div>
+        <div class="track-btns">
+          <a href="https://t.me/QesemAcademy" target="_blank" class="track-btn">Qesem Academy →</a>
+          <a href="https://t.me/Qesem_University" target="_blank" class="track-btn">Qesem University →</a>
+          <a href="https://play.google.com/store/apps/details?id=com.qesem.academy" target="_blank" class="track-btn">Quiz App →</a>
         </div>
       </div>
 
-      <div class="track-card">
-        <div class="track-card-header" onclick="toggleTrack(this)">
-          <div class="track-card-left">
-            <div class="track-card-icon">🔬</div>
-            <div class="track-card-title-group">
-              <div class="track-card-org">Science Communication</div>
-              <div class="track-card-role">Independent Technical Writer</div>
-            </div>
+      <div class="track-item">
+        <div class="track-head">
+          <div>
+            <div class="track-org">Wisdom Tower Network</div>
+            <div class="track-role">Founder &amp; Community Organizer</div>
           </div>
-          <div class="track-card-right">
-            <div class="track-card-count">
-              <div class="track-card-num" style="font-size:1rem;line-height:1.4;">Ongoing</div>
-              <div class="track-card-sub">Aerospace · AI · Technology</div>
-            </div>
-            <div class="track-card-chevron">▾</div>
+          <div class="track-scale">
+            <div class="track-big">25<em>k+</em></div>
+            <div class="track-sub">University students &amp; researchers</div>
           </div>
         </div>
-        <div class="track-card-body">
-          <div class="track-card-narrative">
-            <div class="track-block"><div class="track-lbl">The Situation</div><div class="track-txt">We are living in a society that depends entirely on technology yet has limited understanding of it, often ignoring or underestimating its power. Misconceptions and misinformation are widespread.</div></div>
-            <div class="track-block"><div class="track-lbl">What I Did</div><div class="track-txt">Write visual explainers. My social media posts consistently focus on technology, innovation, problem-solving, awareness creation, and encouraging innovators.</div></div>
-            <div class="track-block"><div class="track-lbl">The Cost</div><div class="track-txt">It has come at the cost of personal comfort, trading my own time and rest for public communication. Most of my work has not been commercial, prioritizing society over myself, time, focus, and personal energy.</div></div>
-            <div class="track-block"><div class="track-lbl">What It Built</div><div class="track-txt">Trust, a community that relies on my work, and a sense of direction and hope for innovators and people around me.</div></div>
+        <div class="track-narrative">
+          <div class="track-block">
+            <div class="track-lbl">The Situation</div>
+            <div class="track-txt">As a university student in Ethiopia, finding resources, information, advice, guides, and opportunities is genuinely difficult. The only thing students can access is a rigid class schedule, with little connection to real-life learning needs.</div>
           </div>
+          <div class="track-block">
+            <div class="track-lbl">What I Did</div>
+            <div class="track-txt">Built and cataloged a free digital library from scratch. Gathered over 10,000 educational materials covering every course in Ethiopian higher education, plus time management tips, scholarships, and a space where students can find co-founders and access everything they need in one place.</div>
+          </div>
+          <div class="track-block">
+            <div class="track-lbl">The Cost</div>
+            <div class="track-txt">I managed the entire community alone through my own midterms. I refused to run ads or charge access fees. The channel remained free and fully focused on learning.</div>
+          </div>
+          <div class="track-block">
+            <div class="track-lbl">What It Built</div>
+            <div class="track-txt"><a href="https://t.me/wisdom_tower1" target="_blank">@wisdom_tower1</a> now has over 25,000 active students, researchers, and young innovators sharing materials and helping each other daily. No barriers, no cost, no ads. A trusted source and honest insight-sharing hub for thousands.</div>
+          </div>
+        </div>
+        <div class="track-btns">
+          <a href="https://t.me/wisdom_tower1" target="_blank" class="track-btn">Wisdom Tower →</a>
         </div>
       </div>
 
+      <div class="track-item">
+        <div class="track-head">
+          <div>
+            <div class="track-org">Science Communication</div>
+            <div class="track-role">Independent Technical Writer</div>
+          </div>
+          <div class="track-scale">
+            <div class="track-big" style="font-size:1.1rem;line-height:1.5;">Ongoing</div>
+            <div class="track-sub">Aerospace · AI · Engineering · Technology</div>
+          </div>
+        </div>
+        <div class="track-narrative">
+          <div class="track-block">
+            <div class="track-lbl">The Situation</div>
+            <div class="track-txt">We are living in a society that depends entirely on technology yet has limited understanding of it, often ignoring or underestimating its power. Misconceptions and misinformation are widespread.</div>
+          </div>
+          <div class="track-block">
+            <div class="track-lbl">What I Did</div>
+            <div class="track-txt">Write visual explainers. My social media posts consistently focus on technology, innovation, problem-solving, awareness creation, and encouraging innovators.</div>
+          </div>
+          <div class="track-block">
+            <div class="track-lbl">The Cost</div>
+            <div class="track-txt">It has come at the cost of personal comfort, trading my own time and rest for public communication. Most of my work has not been commercial, prioritizing society over myself, time, focus, and personal energy.</div>
+          </div>
+          <div class="track-block">
+            <div class="track-lbl">What It Built</div>
+            <div class="track-txt">Trust, a community that relies on my work, and a sense of direction and hope for innovators and people around me.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 <!-- CONTRIBUTIONS -->
 <section id="contributions">
   <div class="wrap">
@@ -1066,7 +976,6 @@
 
         <div class="about-block">
           <div class="about-block-label">What I chose not to do</div>
-          <div class="about-block-text">I chose not to operate inside rigid boxes. If the goal is clear, I have a hundred ways to execute it. I don't follow generic templates or check boxes just to look busy. Tell me what we are building, get out of the way, and let me build it.</div>
         </div>
 
         <div class="about-block">
@@ -1074,13 +983,13 @@
           <div class="about-block-text">A high schooler sending a message at midnight saying my channel saved his exam, an innovator sending a DM that they've got hope from my channel, a stranger talking about my work somewhere else, my previous work exceeding expectations and being followed as a standard.</div>
         </div>
 
-        <div class="about-info-cards">
-          <div class="about-info-card"><div class="aic-icon">📍</div><div class="aic-info"><div class="aic-label">Location</div><div class="aic-val">Ethiopia</div></div></div>
-          <div class="about-info-card"><div class="aic-icon">🎓</div><div class="aic-info"><div class="aic-label">Status</div><div class="aic-val">2nd Year ECE — HIT</div></div></div>
-          <div class="about-info-card"><div class="aic-icon">🟢</div><div class="aic-info"><div class="aic-label">Availability</div><div class="aic-val green">Remote — Immediately</div></div></div>
-          <div class="about-info-card"><div class="aic-icon">⚡</div><div class="aic-info"><div class="aic-label">Response Time</div><div class="aic-val">Within 6 hours</div></div></div>
-          <div class="about-info-card" style="grid-column: span 2;"><div class="aic-icon">🛠️</div><div class="aic-info"><div class="aic-label">Tools</div><div class="aic-val">GitHub · Git · LaTeX · Markdown · Visme · Figma · Canva · CapCut · Full AI Suite</div></div></div>
-          <div class="about-info-card" style="grid-column: span 2;"><div class="aic-icon">🔭</div><div class="aic-info"><div class="aic-label">Interests</div><div class="aic-val">Reverse Engineering · Behavioral Psychology · Innovation</div></div></div>
+        <div class="about-table">
+          <div class="about-row"><span class="a-key">Location</span><span class="a-val">Ethiopia</span></div>
+          <div class="about-row"><span class="a-key">Status</span><span class="a-val">2nd Year ECE Student — Haramaya Institute of Technology</span></div>
+          <div class="about-row"><span class="a-key">Availability</span><span class="a-val green">Open to Remote Work — Immediately</span></div>
+          <div class="about-row"><span class="a-key">Response Time</span><span class="a-val">Within 6 hours</span></div>
+          <div class="about-row"><span class="a-key">Tools</span><span class="a-val">GitHub · Git · LaTeX · Markdown · Visme · Figma · Canva · CapCut · Full AI Suite</span></div>
+          <div class="about-row"><span class="a-key">Interests</span><span class="a-val">Reverse Engineering · Behavioral Psychology · Innovation</span></div>
         </div>
       </div>
     </div>
@@ -1095,23 +1004,11 @@
     <div class="contact-grid r">
       <div>
         <p class="contact-lede">If you need a writer who <strong>actually understands the technology</strong>, a technical communicator who doesn't lose the human in the process, or a content executor who delivers before the deadline, reach out.</p>
-        <div class="contact-icon-grid">
-          <a href="mailto:hiyabteklu720@gmail.com" class="c-icon-card">
-            <div class="c-icon-wrap">✉️</div>
-            <div class="c-icon-info"><div class="c-icon-label">Email</div><div class="c-icon-val">hiyabteklu720@gmail.com</div></div>
-          </a>
-          <a href="https://t.me/hiyab_t" target="_blank" class="c-icon-card">
-            <div class="c-icon-wrap">✈️</div>
-            <div class="c-icon-info"><div class="c-icon-label">Telegram</div><div class="c-icon-val">@hiyab_t</div></div>
-          </a>
-          <a href="https://www.linkedin.com/in/hiyabteklu" target="_blank" class="c-icon-card">
-            <div class="c-icon-wrap">💼</div>
-            <div class="c-icon-info"><div class="c-icon-label">LinkedIn</div><div class="c-icon-val">linkedin.com/in/hiyabteklu</div></div>
-          </a>
-          <a href="tel:+251900763030" class="c-icon-card">
-            <div class="c-icon-wrap">📞</div>
-            <div class="c-icon-info"><div class="c-icon-label">Phone</div><div class="c-icon-val">+251 900 763030</div></div>
-          </a>
+        <div>
+          <a href="mailto:hiyabteklu720@gmail.com" class="c-link"><span class="c-key">Email</span><span class="c-val">hiyabteklu720@gmail.com</span></a>
+          <a href="https://t.me/hiyab_t" target="_blank" class="c-link"><span class="c-key">Telegram</span><span class="c-val">@hiyab_t</span></a>
+          <a href="https://www.linkedin.com/in/hiyabteklu" target="_blank" class="c-link"><span class="c-key">LinkedIn</span><span class="c-val">linkedin.com/in/hiyabteklu</span></a>
+          <a href="tel:+251900763030" class="c-link"><span class="c-key">Phone</span><span class="c-val">+251 900 763030</span></a>
         </div>
       </div>
       <div class="contact-cta">
@@ -1231,44 +1128,6 @@
     });
     btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
   });
-
-  /* SPOTLIGHT GLOW ON CARDS */
-  document.querySelectorAll('.spotlight').forEach(card=>{
-    card.addEventListener('mousemove', e=>{
-      const r = card.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%';
-      const y = ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%';
-      card.style.setProperty('--mx', x);
-      card.style.setProperty('--my', y);
-    });
-  });
-
-  /* PARALLAX GHOST NUMBERS ON SCROLL */
-  window.addEventListener('scroll', ()=>{
-    const sy = window.scrollY;
-    document.querySelectorAll('.ap-ghost').forEach((g, i)=>{
-      const dir = i % 2 === 0 ? 1 : -1;
-      g.style.transform = `translateY(${sy * 0.04 * dir}px) scale(1)`;
-    });
-    document.querySelectorAll('.svc-ghost').forEach((g, i)=>{
-      const dir = i % 2 === 0 ? -1 : 1;
-      g.style.transform = `translateY(${sy * 0.025 * dir}px)`;
-    });
-  }, {passive:true});
-
-  /* STAGGERED FADE-LINE REVEALS */
-  document.querySelectorAll('.about-text, .contrib-lede, .contact-lede, .sdesc, .track-txt, .ap-text, .svc-desc, .w-desc').forEach(el=>{
-    el.classList.add('fade-line');
-    obs.observe(el);
-  });
-
-  /* TRACK RECORD ACCORDION */
-  function toggleTrack(header){
-    const card = header.closest('.track-card');
-    const isOpen = card.classList.contains('open');
-    document.querySelectorAll('.track-card').forEach(c => c.classList.remove('open'));
-    if (!isOpen) card.classList.add('open');
-  }
 </script>
 </body>
 </html>
